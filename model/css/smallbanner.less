@@ -1,0 +1,24 @@
+//引入公共存储样式变量
+@import "/less/bianliang";
+//smallbanner的样式
+.title {
+    position: relative;
+    a {
+        color: @_blue;
+        position: absolute;
+        right: 0;
+        text-decoration: none;
+    }
+    p {
+        color: @_blue;
+        .font-fm();
+        font-size: 1.2em;
+        margin: 0;
+        margin-left: 40px;
+        border-bottom: 1px solid @_blue;
+        strong{
+            font-size: 0.7em;
+            font-weight: normal;
+        }
+    }
+}

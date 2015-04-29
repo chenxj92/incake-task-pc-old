@@ -1,0 +1,44 @@
+//引入公共存储样式变量
+@import "/less/bianliang";
+@import "/less/reset";
+
+.reset-normalize();
+//list样式
+.goods_list{
+    width: 1050px;
+    margin: 0 auto;
+}
+.max_width{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    li{
+        width: 25%;
+        float: left;
+        position: relative;
+        text-align: center;
+        list-style: none;
+        overflow: hidden;
+        margin-right: -1px\9;
+        a{
+            display: block;
+            margin-bottom: 30px;
+            p{
+                display: none;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: @_gray;
+                color: #fff;
+                padding: 5px 0;
+                text-decoration: none\9;
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+
+

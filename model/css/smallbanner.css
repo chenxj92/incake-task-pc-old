@@ -1,0 +1,22 @@
+.title {
+  position: relative;
+}
+.title a {
+  color: #3b87c1;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+}
+.title p {
+  color: #3b87c1;
+  font-family: "Microsoft Yahei", "微软雅黑";
+  font-size: 1.2em;
+  margin: 0;
+  margin-left: 40px;
+  border-bottom: 1px solid #3b87c1;
+}
+.title p strong {
+  font-size: 0.7em;
+  font-weight: normal;
+}
+/*# sourceMappingURL=smallbanner.css.map */

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Demo</title>
+		<link rel="stylesheet" href="../css/idangerous.swiper.css">
+		<link rel="stylesheet" type="text/css" href="../css/swiper_demo.css" />
+	</head>
+
+	<body>
+
+		<div class="swiper-container">
+			<a class="arrow-left" href="#"></a>
+			<a class="arrow-right" href="#"></a>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="../img/1.jpg">
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="../img/2.jpg">
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="../img/3.jpg">
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="../img/4.jpg">
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="../img/5.jpg">
+					</a>
+				</div>
+			</div>
+			<!--分页标记-->
+			<div class="pagination"></div>
+		</div>
+
+		<script src="../js/jquery.js"></script>
+		<script src="../js/idangerous.swiper.min.js"></script>
+		<script>
+			$(function() {
+				var count = document.getElementsByClassName("swiper-slide");
+				if (count.length > 1) {
+					swiperinit(5000);
+				} else {
+					swiperinit(false);
+				}
+
+				function swiperinit(arguments) {
+					if (arguments == false) { //仅有一张图片
+						var mySwiper = new Swiper('.swiper-container', {
+							autoplay: arguments, //自动播放，不指定默认不播放，单位为ms
+							grabCursor: true, //鼠标变成手
+						});
+					} else { //表示有多个图片
+						var mySwiper = new Swiper('.swiper-container', {
+							pagination: '.pagination', //分页标记
+							loop: true, //循环
+							autoplay: arguments, //自动播放，不指定默认不播放，单位为ms
+							autoplayDisableOnInteraction: false,
+							speed: 1000,
+							grabCursor: true, //鼠标变成手
+							paginationClickable: true //分页标记是否可点击
+						});
+					}
+					//向左翻页
+					$('.arrow-left').on('click', function(e) {
+						e.preventDefault() //阻止默认的
+						mySwiper.swipePrev() //前一个
+					});
+					//向右翻页
+					$('.arrow-right').on('click', function(e) {
+						e.preventDefault() //阻止默认的
+						mySwiper.swipeNext() //后一个
+					});
+				}
+			})
+		</script>
+	</body>
+
+</html>
