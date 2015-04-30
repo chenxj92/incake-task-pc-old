@@ -1,0 +1,39 @@
+.tabs{
+    ul{
+        li{
+            display: inline-block;
+            margin-right: 10px;
+            _display: inline;
+            _zoom: 1;
+            a{
+                display: inline-block;
+                padding: 15px 30px;
+                border-bottom: 4px solid #e5e5e5;
+                font-size: 14px;
+                color: #aaa;
+                background-color: #f8f8f8;
+                text-decoration: none;
+            }
+        }
+        .active{
+            a{
+                border-bottom-color: #68a697;
+                color: #fff;
+                background-color: #a0cac0;
+            }
+        }
+    }
+   div{
+       display: block;
+       min-height: 200px;
+       margin-top: 10px;
+       height: auto;
+       height: 200px\9;
+       line-height: 200px;
+       text-align: center;
+       background-color: #f8f8f8;
+       & + div{
+           display: none;
+       }
+   } 
+}
