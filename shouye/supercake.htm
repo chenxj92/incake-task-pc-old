@@ -13,17 +13,20 @@
 		<script charset="utf-8" src="./supercake_files/v.js"></script>
 		<script type="text/javascript">
 			function IsPC() {
-			            var userAgentInfo = navigator.userAgent;
-			            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
-			            var flag = true;
-			            for (var v = 0; v < Agents.length; v++) {
-			                if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
-			            }
-			            return flag;
-			        }
-			        if (!IsPC() && location.href.toString().toLowerCase().indexOf('source=mobile') == -1) {
-			            location.href = "http://wap.incake.net"
-			        }
+				var userAgentInfo = navigator.userAgent;
+				var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+				var flag = true;
+				for (var v = 0; v < Agents.length; v++) {
+					if (userAgentInfo.indexOf(Agents[v]) > 0) {
+						flag = false;
+						break;
+					}
+				}
+				return flag;
+			}
+			if (!IsPC() && location.href.toString().toLowerCase().indexOf('source=mobile') == -1) {
+				location.href = "http://wap.incake.net"
+			}
 		</script>
 		<link href="./supercake_files/style2.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript" src="./supercake_files/jquery.js"></script>
@@ -31,199 +34,185 @@
 		<script type="text/javascript" src="./supercake_files/list_v0.js"></script>
 		<link rel="stylesheet" href="http://www.incake.net/js/skins/blue.css?4.1.7">
 		<script src="./supercake_files/artDialog.js" type="text/javascript"></script>
-		<script src="./supercake_files/CFS.Snow.min.min.js" type="text/javascript"></script>
-		<!--<script src="js/index.js" type="text/javascript"></script>-->
 		<script type="text/javascript">
-			window.onload = function () {
-			            snow.down();
-			        };
-		</script>
-		<script type="text/javascript">
-			$(function () {
-			            $(".buynow").click(function () {
-			                var price = $(this).parents(".fnn_top").find(".buynow").attr("price");
-			                var proid = $(this).parents(".fnn_top").find(".buynow").attr("proid");
-			                var salnum = $(this).parents(".fnn_top").find(".buynow").attr("salnum");
-			                var begintime = $(this).parents(".fnn_top").find(".buynow").attr("begintime");
-			                var endtime = $(this).parents(".fnn_top").find(".buynow").attr("endtime");
-			                var num = $(this).parents(".fnn_top").find(".buynow").attr("qid");
-			                var cid = $(this).parents(".fnn_top").find(".buynow").attr("cid");
-			                var pang = $(this).parents(".fnn_top").find(".buynow").attr("qgpang");
-			                var cake = proid + "-" + pang + "-1";
-			
-			                if (qianggou(begintime, endtime)) {
-			                    if (salnum == "0") {
-			                        $(".ui_popupover").hide();
-			                        $("#coupon_tureover").popupFn();
-			                        // alert("该蛋糕已抢购完");
-			                    } else {
-			                        $.ajax({
-			                            url: "../WebPage/SaveInfo.aspx", dataType: "json", type: "post", timeout: "10000",
-			                            data: { "type": "_paniccar", "_cake": cake, "_cid": cid, "numid": num, "Qgbegintime": begintime, "Qgendtime": endtime },
-			                            success: function (data) {
-			                                if (data.msg == "加入购物车成功") {
-			                                    if ($("#hid").val() == "1") {
-			                                        //location.href = "/manage/buycart.html";
-			                                    }
-			                                    else {
-			                                        location.href = "/PanicFirOrder.html";
-			                                    }
-			                                }
-			                                else if (data.msg == "1") {
-			                                    $(".ui_popupone").hide();
-			                                    $("#coupon_tureone").popupFn();
-			                                    //alert("此蛋糕每个用户只能抢购一个");
-			                                }
-			                                else { CommenMsg(data.msg); }
-			                            },
-			                            error: function () {
-			                                CommenMsg("网络错误！");
-			                            }
-			                        });
-			                    }
-			
-			                }
-			
-			            })
-			
-			        })
-			
-			        var qianggou = function (begintime, endtime) {
-			            //            alert(begintime + ":" + endtime);
-			            var time_start = new Date(begintime).getTime();
-			            //当前时间
-			            var time_now = new Date().getTime();
-			            var time = new Date().getTime();
-			            //结束时间
-			            var time_end = new Date(endtime).getTime();
-			            if (time_now < time_start) {
-			                //alert("该活动正在筹备中，请耐心等待！");
-			                $(".ui_popup").hide();
-			                $("#coupon_ture").popupFn();
-			                return false;
-			            }
-			            else if (time_now > time_end) {
-			                //alert("本次抢购已经结束,请下次再来抢购！");
-			                $(".ui_popupend").hide();
-			                $("#coupon_tureend").popupFn();
-			                return false;
-			            }
-			            return true;
-			
-			        }
-			
-			        $(function () {
-			            $(".Afternoon_tea li a").mousemove(function () {
-			                $(".Afternoon_tea li div").show();
-			                //alert("11");
-			            });
-			
-			        })
-			
-			        function countDown(date_start, date_end, id, num) {
-			            var hour_elem1 = $(id).find('.hour1'),
-			            hour_elem2 = $(id).find('.hour2'),
-			            minute_elem1 = $(id).find('.minute1'),
-			            minute_elem2 = $(id).find('.minute2'),
-			            second_elem1 = $(id).find('.second1'),
-			            second_elem2 = $(id).find('.second2');
-			            if (parseInt(num) <= 0) {
-			                $("#state").text('本次秒杀已抢完');
-			                return;
-			            }
-			            // 开始时间
-			            var time_start = new Date(date_start).getTime();
-			
-			            // 开始时间
-			            var time_end = new Date(date_end).getTime();
-			            // 当前时间
-			            var time_now = new Date().getTime();
-			
-			            // 计算剩余多少秒开始
-			            var sys_second = 0;
-			            if (time_now < time_start) {
-			                $("#state").text('距离下次开始还有');
-			                sys_second = (time_start - time_now) / 1000;
-			            } else if (time_now < time_end) {
-			                $("#state").text('距离本次结束还有');
-			                sys_second = (time_end - time_now) / 1000;
-			            } else {
-			                $("#state").text('本次抢购已经结束');
-			            }
-			
-			            var timer = setInterval(function () {
-			                if (sys_second > 1) {
-			                    sys_second -= 1;
-			
-			                    var hour = Math.floor(sys_second / 3600);
-			                    var minute = Math.floor((sys_second / 60) % 60);
-			                    var second = Math.floor(sys_second % 60);
-			
-			                    if (hour < 10) {
-			                        $(hour_elem1).text('0');
-			                        $(hour_elem2).text(hour);
-			                    } else {
-			                        hour += '';
-			                        var hour1 = hour.substring(0, 1),
-			                        hour2 = hour.substring(1);
-			                        $(hour_elem1).text(hour1);
-			                        $(hour_elem2).text(hour2);
-			                    }
-			                    if (minute < 10) {
-			                        $(minute_elem1).text('0');
-			                        $(minute_elem2).text(minute);
-			                    } else {
-			                        minute += '';
-			                        var num1 = minute.substring(0, 1),
-			                        num2 = minute.substring(1);
-			                        $(minute_elem1).text(num1);
-			                        $(minute_elem2).text(num2);
-			                    }
-			                    if (second < 10) {
-			                        $(second_elem1).text('0');
-			                        $(second_elem2).text(second);
-			                    } else {
-			                        second += '';
-			                        var num1 = second.substring(0, 1),
-			                        num2 = second.substring(1);
-			                        $(second_elem1).text(num1);
-			                        $(second_elem2).text(num2);
-			                    }
-			                } else {
-			                    if (time_now < time_start) {
-			                        $("#state").text('活动已开始请刷新');
-			                    } else if (time_now < time_end) {
-			                        $("#state").text('本次抢购已经结束');
-			                    }
-			                    clearInterval(timer);
-			                }
-			            }, 1000);
-			        }
-			
-			        //自定义信息提示
-			        function CommenMsg(msg) {
-			            $(".ui_popup").hide();
-			            $("#coupon_turemsg").popupFn();
-			            $("#commenmsg").html(msg);
-			        }
-			
-			
-			        $(function () {
-			            $(".float_banner .box_close").click(function () {
-			                $(".float_banner").hide();
-			            })
-			        })
+			$(function() {
+				$(".buynow").click(function() {
+					var price = $(this).parents(".fnn_top").find(".buynow").attr("price");
+					var proid = $(this).parents(".fnn_top").find(".buynow").attr("proid");
+					var salnum = $(this).parents(".fnn_top").find(".buynow").attr("salnum");
+					var begintime = $(this).parents(".fnn_top").find(".buynow").attr("begintime");
+					var endtime = $(this).parents(".fnn_top").find(".buynow").attr("endtime");
+					var num = $(this).parents(".fnn_top").find(".buynow").attr("qid");
+					var cid = $(this).parents(".fnn_top").find(".buynow").attr("cid");
+					var pang = $(this).parents(".fnn_top").find(".buynow").attr("qgpang");
+					var cake = proid + "-" + pang + "-1";
+					if (qianggou(begintime, endtime)) {
+						if (salnum == "0") {
+							$(".ui_popupover").hide();
+							$("#coupon_tureover").popupFn();
+							// alert("该蛋糕已抢购完");
+						} else {
+							$.ajax({
+								url: "../WebPage/SaveInfo.aspx",
+								dataType: "json",
+								type: "post",
+								timeout: "10000",
+								data: {
+									"type": "_paniccar",
+									"_cake": cake,
+									"_cid": cid,
+									"numid": num,
+									"Qgbegintime": begintime,
+									"Qgendtime": endtime
+								},
+								success: function(data) {
+									if (data.msg == "加入购物车成功") {
+										if ($("#hid").val() == "1") {
+											//location.href = "/manage/buycart.html";
+										} else {
+											location.href = "/PanicFirOrder.html";
+										}
+									} else if (data.msg == "1") {
+										$(".ui_popupone").hide();
+										$("#coupon_tureone").popupFn();
+										//alert("此蛋糕每个用户只能抢购一个");
+									} else {
+										CommenMsg(data.msg);
+									}
+								},
+								error: function() {
+									CommenMsg("网络错误！");
+								}
+							});
+						}
+					}
+				})
+			})
+			var qianggou = function(begintime, endtime) {
+				//            alert(begintime + ":" + endtime);
+				var time_start = new Date(begintime).getTime();
+				//当前时间
+				var time_now = new Date().getTime();
+				var time = new Date().getTime();
+				//结束时间
+				var time_end = new Date(endtime).getTime();
+				if (time_now < time_start) {
+					//alert("该活动正在筹备中，请耐心等待！");
+					$(".ui_popup").hide();
+					$("#coupon_ture").popupFn();
+					return false;
+				} else if (time_now > time_end) {
+					//alert("本次抢购已经结束,请下次再来抢购！");
+					$(".ui_popupend").hide();
+					$("#coupon_tureend").popupFn();
+					return false;
+				}
+				return true;
+			}
+			$(function() {
+				$(".Afternoon_tea li a").mousemove(function() {
+					$(".Afternoon_tea li div").show();
+					//alert("11");
+				});
+			})
+
+			function countDown(date_start, date_end, id, num) {
+					var hour_elem1 = $(id).find('.hour1'),
+						hour_elem2 = $(id).find('.hour2'),
+						minute_elem1 = $(id).find('.minute1'),
+						minute_elem2 = $(id).find('.minute2'),
+						second_elem1 = $(id).find('.second1'),
+						second_elem2 = $(id).find('.second2');
+					if (parseInt(num) <= 0) {
+						$("#state").text('本次秒杀已抢完');
+						return;
+					}
+					// 开始时间
+					var time_start = new Date(date_start).getTime();
+					// 开始时间
+					var time_end = new Date(date_end).getTime();
+					// 当前时间
+					var time_now = new Date().getTime();
+					// 计算剩余多少秒开始
+					var sys_second = 0;
+					if (time_now < time_start) {
+						$("#state").text('距离下次开始还有');
+						sys_second = (time_start - time_now) / 1000;
+					} else if (time_now < time_end) {
+						$("#state").text('距离本次结束还有');
+						sys_second = (time_end - time_now) / 1000;
+					} else {
+						$("#state").text('本次抢购已经结束');
+					}
+					var timer = setInterval(function() {
+						if (sys_second > 1) {
+							sys_second -= 1;
+							var hour = Math.floor(sys_second / 3600);
+							var minute = Math.floor((sys_second / 60) % 60);
+							var second = Math.floor(sys_second % 60);
+							if (hour < 10) {
+								$(hour_elem1).text('0');
+								$(hour_elem2).text(hour);
+							} else {
+								hour += '';
+								var hour1 = hour.substring(0, 1),
+									hour2 = hour.substring(1);
+								$(hour_elem1).text(hour1);
+								$(hour_elem2).text(hour2);
+							}
+							if (minute < 10) {
+								$(minute_elem1).text('0');
+								$(minute_elem2).text(minute);
+							} else {
+								minute += '';
+								var num1 = minute.substring(0, 1),
+									num2 = minute.substring(1);
+								$(minute_elem1).text(num1);
+								$(minute_elem2).text(num2);
+							}
+							if (second < 10) {
+								$(second_elem1).text('0');
+								$(second_elem2).text(second);
+							} else {
+								second += '';
+								var num1 = second.substring(0, 1),
+									num2 = second.substring(1);
+								$(second_elem1).text(num1);
+								$(second_elem2).text(num2);
+							}
+						} else {
+							if (time_now < time_start) {
+								$("#state").text('活动已开始请刷新');
+							} else if (time_now < time_end) {
+								$("#state").text('本次抢购已经结束');
+							}
+							clearInterval(timer);
+						}
+					}, 1000);
+				}
+				//自定义信息提示
+
+			function CommenMsg(msg) {
+				$(".ui_popup").hide();
+				$("#coupon_turemsg").popupFn();
+				$("#commenmsg").html(msg);
+			}
+			$(function() {
+				$(".float_banner .box_close").click(function() {
+					$(".float_banner").hide();
+				})
+			})
 		</script>
 		<style type="text/css">
-			.kill_right em{
-	            color: #3771B0;
-	            text-decoration: line-through;
-	        }
-	        .new_Angle{
-	        	position: absolute;
-	        	left: 0;
-	        	top: 0px;
-	        }
+			.kill_right em {
+				color: #3771B0;
+				text-decoration: line-through;
+			}
+			.new_Angle {
+				position: absolute;
+				left: 0;
+				top: 0px;
+			}
 		</style>
 	</head>
 
@@ -279,9 +268,11 @@
 			</div>
 		</div>
 		<!-- 公告-->
-		<!-- <div class="toubiao">
-    <span class="gg"><img src="img/52.gif" width="60" height="58" style="cursor:pointer;" onClick="gg_click()"></span>
-  </div>-->
+		<!--<div class="toubiao">
+			<span class="gg">
+				<img src="img/52.gif" width="60" height="58" style="cursor:pointer;" onClick="gg_click()">
+			</span>
+		</div>-->
 
 		<div class="page index">
 			<input type="hidden" id="hid_citycode" value="021">
@@ -344,7 +335,7 @@
 								<a href="./supercake_files/supercake.htm">首页<br><i>HOME</i></a>
 							</div>
 							<div class="link list">
-								<img src="img/NEW.png"/ class="new_Angle">
+								<img src="img/NEW.png" / class="new_Angle">
 								<a href="http://www.incake.net/products/cakelist.html">蛋糕馆<br><i>CAKE LIST</i></a>
 								<ul class="menu" style="display: none;">
 									<li>
@@ -439,7 +430,7 @@
 			</div>
 
 			<!-- 首页广告滚动-->
-			<div class="header_banner">
+			<!--<div class="header_banner">
 				<div class="banner_img">
 					<div class="homeShow x-imgbox">
 						<div class="homeHead w">
@@ -451,9 +442,8 @@
 								<a href="javascript:void(0)" class=""></a>
 							</div>
 							<div class="arrows">
-								<a href="javascript:;" class="left"><i>上一张</i> </a>
-								<a href="javascript:;" class="right">
-									<i>下一张</i> </a>
+								<a href="javascript:;" class="left"><i>上一张</i></a>
+								<a href="javascript:;" class="right"><i>下一张</i></a>
 							</div>
 						</div>
 						<ul id="slides" class="banner index_banner big-img">
@@ -486,7 +476,7 @@
 						</ul>
 					</div>
 				</div>
-			</div>
+			</div>-->
 			<!-- 蛋糕列表-->
 			<div class="index_module">
 				<div style="overflow: hidden;">
@@ -687,7 +677,7 @@
 							</div>
 						</div>
 						<script>
-							countDown('2015/4/24 0:00:00', '2015/4/24 23:59:59', $('#234'),'24');
+							countDown('2015/4/24 0:00:00', '2015/4/24 23:59:59', $('#234'), '24');
 						</script>
 						<div class="fnn_bottom">
 							<p>
@@ -807,7 +797,7 @@
 				<div class="foot_div">
 					<script type="text/javascript">
 						var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-						    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F350d834e9b212adee92daa5ed888a2e7' type='text/javascript'%3E%3C/script%3E"));
+						document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F350d834e9b212adee92daa5ed888a2e7' type='text/javascript'%3E%3C/script%3E"));
 					</script>
 					<script src="./supercake_files/h.js" type="text/javascript"></script>
 					<a href="http://tongji.baidu.com/hm-web/welcome/ico?s=350d834e9b212adee92daa5ed888a2e7" target="_blank">
@@ -817,9 +807,9 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			$(document).ready(function () {
-			            CheckDaoGuo();
-			        });
+			$(document).ready(function() {
+				CheckDaoGuo();
+			});
 		</script>
 
 		<style type="text/css" media="screen">
