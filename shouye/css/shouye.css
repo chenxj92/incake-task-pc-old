@@ -1,0 +1,92 @@
+@charset "UTF-8";
+.main_banner {
+  min-width: 1200px;
+  margin: 0 auto;
+  height: 500px;
+}
+.main_banner .arrow-left {
+  background: url(../img/arrows.png) no-repeat left top;
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+  z-index: 2;
+}
+.main_banner .arrow-right {
+  background: url(../img/arrows.png) no-repeat left bottom;
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+  z-index: 2;
+}
+.main_banner .swiper-slide a {
+  display: block;
+  text-align: center;
+}
+.main_banner .swiper-slide img {
+  vertical-align: top;
+  border: none;
+  height: 500px;
+}
+.main_banner .pagination {
+  background: url(../img/pagination_bg.png) no-repeat center bottom;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  padding-top: 50px;
+  z-index: 2;
+}
+.main_banner .swiper-pagination-bullet {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  background: #595858;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.main_banner .swiper-pagination-bullet-active {
+  background: #BA1B21;
+}
+
+.kill_banner {
+  width: 250px;
+  height: 230px;
+}
+
+.main_container {
+  width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.title_banner {
+  position: relative;
+}
+.title_banner a {
+  color: #3b87c1;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+}
+.title_banner p {
+  color: #3b87c1;
+  font-size: 1.6em;
+  font-family: "Microsoft Yahei","微软雅黑";
+  margin: 0;
+  margin-left: 40px;
+  border-bottom: 1px solid #3b87c1;
+}
+.title_banner p strong {
+  font-size: 0.7em;
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=shouye.css.map */

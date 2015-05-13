@@ -1,0 +1,93 @@
+@charset "utf-8";
+@import "bianliang";
+.main_banner {
+    min-width: 1200px;
+    margin: 0 auto;
+    height: 500px;
+    .arrow-left{
+        background: url(../img/arrows.png) no-repeat left top;
+        position: absolute;
+        left: 60px;
+        top: 50%;
+        margin-top: -15px;
+        width: 17px;
+        height: 30px;
+        z-index: 2;
+    }
+    .arrow-right{
+        background: url(../img/arrows.png) no-repeat left bottom;
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        margin-top: -15px;
+        width: 17px;
+        height: 30px;
+        z-index: 2;
+    }
+    .swiper-slide{
+        a{
+            display: block;
+            text-align: center;
+        }
+        img{
+            vertical-align: top;
+            border: none;
+            height: 500px;
+        }
+    }
+    .pagination{
+        background: url(../img/pagination_bg.png) no-repeat center bottom;
+        position: absolute;
+        left: 0;
+        text-align: center;
+        bottom: 0;
+        width: 100%;
+        padding-top: 50px;
+        z-index: 2;
+    }
+    .swiper-pagination-bullet {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 10px;
+        background: #595858;
+        margin: 0 3px;
+        cursor: pointer;
+    }
+    .swiper-pagination-bullet-active {
+        background: #BA1B21;
+    }
+}
+
+//首页秒杀轮播
+.kill_banner{
+    width: 250px;
+    height: 230px;
+}
+//首页主要内容main_container
+.main_container{
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+}
+.title_banner {
+    position: relative;
+    a {
+        color: $_blue;
+        position: absolute;
+        right: 0;
+        text-decoration: none;
+    }
+    p {
+        color: $_blue;
+        font-size: 1.6em;
+        @include font-fm;
+        margin: 0;
+        margin-left: 40px;
+        border-bottom: 1px solid $_blue;
+        strong{
+            font-size: 0.7em;
+            font-weight: normal;
+        }
+    }
+}

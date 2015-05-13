@@ -1,0 +1,8 @@
+@charset "utf-8";
+//颜色
+$_blue:#3b87c1;
+$_gray:#9C9D9D;
+//字体
+@mixin font-fm {
+    font-family: "Microsoft Yahei","微软雅黑";
+}
