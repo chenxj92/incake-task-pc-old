@@ -1,4 +1,20 @@
 @charset "UTF-8";
+.header .city_list .city_link:hover {
+  background: #5cbeef;
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#5cbeef), to(#339ce4));
+  background-image: -webkit-linear-gradient(top, #5cbeef, #339ce4);
+  background-image: -moz-linear-gradient(top, #5cbeef, #339ce4);
+  background-image: -o-linear-gradient(top, #5cbeef, #339ce4);
+  background-image: -ms-linear-gradient(top, #5cbeef, #339ce4);
+  background-image: linear-gradient(to bottom, #5cbeef, #339ce4);
+}
+
+.new_Angle {
+  position: absolute;
+  left: 0;
+  top: 0px;
+}
+
 .main_banner {
   min-width: 1200px;
   margin: 0 auto;
@@ -32,6 +48,7 @@
   vertical-align: top;
   border: none;
   height: 500px;
+  width: 100%;
 }
 .main_banner .pagination {
   background: url(../img/pagination_bg.png) no-repeat center bottom;
@@ -53,12 +70,58 @@
   cursor: pointer;
 }
 .main_banner .swiper-pagination-bullet-active {
-  background: #BA1B21;
+  background: #3b87c1;
 }
 
 .kill_banner {
-  width: 250px;
-  height: 230px;
+  width: 192px;
+  height: 125px;
+  margin-bottom: 16px;
+}
+
+.fnn_top {
+  position: relative;
+  width: 265px;
+  float: right;
+  margin-right: 32px;
+  margin-top: 0;
+  background: #ECF7FF;
+}
+.fnn_top #state {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 8px;
+}
+.fnn_top .qg_time {
+  position: static;
+  margin: 0 auto;
+}
+.fnn_top .kill {
+  padding-left: 0;
+}
+.fnn_top .count-down h4 .number {
+  float: none;
+  display: inline-block;
+}
+.fnn_top .count-down h4 .colon {
+  float: none;
+  display: inline-block;
+}
+.fnn_top .kill_text {
+  width: auto;
+  margin-bottom: 10px;
+}
+.fnn_top .kill_right em {
+  color: #3771B0;
+  text-decoration: line-through;
+}
+
+.lunbo_banner {
+  margin: 0;
+  margin-left: 32px;
+  width: 840px;
+  height: 340px;
 }
 
 .main_container {
@@ -70,23 +133,127 @@
 .title_banner {
   position: relative;
 }
+.title_banner .imooc-icon {
+  color: #3b87c1;
+  font-size: 40px;
+  position: absolute;
+}
 .title_banner a {
   color: #3b87c1;
   position: absolute;
-  right: 0;
+  right: 10px;
   text-decoration: none;
 }
 .title_banner p {
   color: #3b87c1;
-  font-size: 1.6em;
+  font-size: 21px;
   font-family: "Microsoft Yahei","微软雅黑";
   margin: 0;
   margin-left: 40px;
+  padding-top: 5px;
   border-bottom: 1px solid #3b87c1;
 }
 .title_banner p strong {
-  font-size: 0.7em;
+  font-size: 13px;
   font-weight: normal;
+}
+
+.product_box {
+  padding: 20px 32px 0;
+}
+
+.product_list {
+  width: 1050px;
+  margin: 0 auto;
+}
+.product_list .max_width {
+  margin: 0;
+  margin-right: -30px;
+  margin-top: 30px;
+  padding: 0;
+  overflow: hidden;
+}
+.product_list .max_width li {
+  width: 240px;
+  height: 240px;
+  float: left;
+  position: relative;
+  text-align: center;
+  list-style: none;
+  overflow: hidden;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.product_list .max_width li img {
+  vertical-align: top;
+  width: 100%;
+}
+.product_list .max_width li a {
+  display: block;
+}
+.product_list .max_width li a p {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(156, 156, 156, 0.6);
+  color: #fff;
+  padding: 5px 0;
+  text-decoration: none\9;
+  margin: 0;
+}
+
+.ad_banner {
+  width: 1150px;
+  height: 100px;
+  border: 1px solid #e7e7e7;
+}
+
+.index_module {
+  height: auto;
+  margin-top: 40px;
+  padding-top: 0;
+}
+
+.base_left_i {
+  position: absolute;
+  float: none;
+  padding-top: 12px;
+}
+.base_left_i .imooc-icon {
+  color: #0d2d90;
+  font-size: 149px;
+  padding: 0;
+  text-decoration: none;
+}
+
+.base_left_z {
+  float: none;
+  margin-left: 240px;
+}
+
+.footer {
+  padding-bottom: 15px;
+  clear: both;
+}
+.footer div {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.footer img {
+  float: left;
+}
+.footer .foot {
+  float: none;
+  overflow: hidden;
+  display: block;
+  margin-top: 10px;
+  padding-left: 10px;
+  width: auto;
+  height: auto;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=shouye.css.map */

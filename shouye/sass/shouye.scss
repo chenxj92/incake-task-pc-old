@@ -1,5 +1,17 @@
 @charset "utf-8";
 @import "bianliang";
+//导航
+.header .city_list .city_link{
+    &:hover{
+        @include v-gradient(#5cbeef,#339ce4,#5cbeef);
+    }
+}
+.new_Angle {
+    position: absolute;
+    left: 0;
+    top: 0px;
+}
+//页面主体内容
 .main_banner {
     min-width: 1200px;
     margin: 0 auto;
@@ -33,6 +45,7 @@
             vertical-align: top;
             border: none;
             height: 500px;
+            width: 100%;
         }
     }
     .pagination{
@@ -55,14 +68,63 @@
         cursor: pointer;
     }
     .swiper-pagination-bullet-active {
-        background: #BA1B21;
+        background: $_blue;
     }
 }
 
 //首页秒杀轮播
 .kill_banner{
-    width: 250px;
-    height: 230px;
+    width: 192px;
+    height: 125px;
+    margin-bottom: 16px;
+}
+.fnn_top{
+    position: relative;
+    width: 265px;
+    float: right;
+    margin-right: 32px;
+    margin-top: 0;
+    background: #ECF7FF;
+    #state{
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 8px;
+    }
+    .qg_time{
+        position: static;
+        margin: 0 auto;
+    }
+    .kill{
+        padding-left: 0;
+    }
+    .count-down{
+        h4{
+            .number{
+                float: none;
+                display: inline-block;
+            }
+            .colon{
+                float: none;
+                display: inline-block;
+            }
+        }
+    }
+    .kill_text{
+        width: auto;
+        margin-bottom: 10px;
+    }
+    .kill_right em{
+        color: #3771B0;
+        text-decoration: line-through;
+    }
+}
+//产品展示轮播
+.lunbo_banner{
+    margin: 0;
+    margin-left: 32px;
+    width: 840px;
+    height: 340px;
 }
 //首页主要内容main_container
 .main_container{
@@ -72,22 +134,126 @@
 }
 .title_banner {
     position: relative;
+    .imooc-icon{
+        color: $_blue;
+        font-size: 40px;
+        position: absolute;
+    }
     a {
         color: $_blue;
         position: absolute;
-        right: 0;
+        right: 10px;
         text-decoration: none;
     }
     p {
         color: $_blue;
-        font-size: 1.6em;
+        font-size: 21px;
         @include font-fm;
         margin: 0;
         margin-left: 40px;
+        padding-top: 5px;
         border-bottom: 1px solid $_blue;
         strong{
-            font-size: 0.7em;
+            font-size: 13px;
             font-weight: normal;
         }
     }
 }
+.product_box{
+    padding: 20px 32px 0;
+}
+//list样式
+.product_list{
+    width: 1050px;
+    margin: 0 auto;
+    .max_width{
+        margin: 0;
+        margin-right: -30px;
+        margin-top: 30px;
+        padding: 0;
+        overflow: hidden;
+        li{
+            width: 240px;
+            height: 240px;
+            float: left;
+            position: relative;
+            text-align: center;
+            list-style: none;
+            overflow: hidden;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            img{
+                vertical-align: top;
+                width: 100%;
+            }
+            a{
+                display: block;
+                p{
+                    display: none;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    background: rgba(156,156,156,.6);
+                    color: #fff;
+                    padding: 5px 0;
+                    text-decoration: none\9;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+//广告位轮播
+.ad_banner{
+    width: 1150px;
+    height: 100px;
+    border: 1px solid #e7e7e7;
+}
+.index_module{
+    height: auto;
+    margin-top: 40px;
+    padding-top: 0;
+}
+//导航样式
+.base_left_i{
+    position: absolute;
+    float: none;
+    padding-top: 12px;
+    .imooc-icon{
+        color: #0d2d90;
+        font-size: 149px;
+        padding: 0;
+        text-decoration: none;
+    }
+}
+.base_left_z{
+    float: none;
+    margin-left: 240px;
+}
+//页脚样式
+.footer{
+    padding-bottom: 15px;
+    clear: both;
+    div{
+        width: 1200px;
+         margin: 0 auto;
+         overflow: hidden;
+    }
+    img{
+        float: left;
+    }
+    .foot{
+        float: none;
+        overflow: hidden;
+        display: block;
+        margin-top: 10px;
+        padding-left: 10px;
+        width: auto;
+        height: auto;
+        text-decoration: none;
+    }
+}
+
+
+

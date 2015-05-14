@@ -201,9 +201,9 @@ $(function() {
 			$(this).find('.arrow-right').hide();
 		}
 	});
-	
+
 	//秒杀轮播
-	$('.kill_banner').each(function(){
+	$('.kill_banner').each(function() {
 		var count = $(this).find(".swiper-slide").length;
 		if (count > 1) {
 			var $this = $(this).swiper({
@@ -217,6 +217,58 @@ $(function() {
 				autoplay: false, //自动播放，不指定默认不播放，单位为ms
 			});
 		}
-	})
+	});
+	
+	//产品展示轮播
+	$('.lunbo_banner').each(function() {
+		var count = $(this).find(".swiper-slide").length;
+		if (count > 1) {
+			var $this = $(this).swiper({
+				loop: true, //循环
+				autoplay: 3000, //自动播放，不指定默认不播放，单位为ms
+				autoplayDisableOnInteraction: false,
+				speed: 500,
+			});
+			$(this).hover(function() {
+				$this.stopAutoplay();
+			}, function() {
+				$this.startAutoplay();
+			});
+		} else {
+			$(this).swiper({
+				autoplay: false, //自动播放，不指定默认不播放，单位为ms
+			});
+		}
+	});
+	
+	//广告位轮播
+	$('.ad_banner').each(function() {
+		var count = $(this).find(".swiper-slide").length;
+		if (count > 1) {
+			var $this = $(this).swiper({
+				loop: true, //循环
+				direction: 'vertical',
+				autoplay: 3000, //自动播放，不指定默认不播放，单位为ms
+				autoplayDisableOnInteraction: false,
+				speed: 500,
+			});
+			$(this).hover(function() {
+				$this.stopAutoplay();
+			}, function() {
+				$this.startAutoplay();
+			});
+		} else {
+			$(this).swiper({
+				autoplay: false, //自动播放，不指定默认不播放，单位为ms
+			});
+		}
+	});
+
+	//首页商品列表鼠标滑过事件
+	$('.max_width li').hover(function() {
+		$(this).find('p').css('display', 'block')
+	}, function() {
+		$(this).find('p').css('display', 'none')
+	});
 
 })

@@ -6,3 +6,23 @@ $_gray:#9C9D9D;
 @mixin font-fm {
     font-family: "Microsoft Yahei","微软雅黑";
 }
+//垂直线性渐变
+@mixin v-gradient($color_start,$color_end,$base){
+    background: $base;
+    background-image: -webkit-gradient(linear, center top, center bottom, from($color_start), to($color_end));
+    background-image: -webkit-linear-gradient(top, $color_start, $color_end);
+    background-image: -moz-linear-gradient(top, $color_start, $color_end);
+    background-image: -o-linear-gradient(top, $color_start, $color_end);
+    background-image: -ms-linear-gradient(top, $color_start, $color_end);
+    background-image: linear-gradient(to bottom, $color_start, $color_end); 
+}
+//水平线性渐变
+@mixin l-gradient($color_start,$color_end,$base){
+    background: $base;
+    background-image: -webkit-gradient(linear, left center, right center, from($color_start), to($color_end));
+    background-image: -webkit-linear-gradient(left, $color_start, $color_end);
+    background-image: -moz-linear-gradient(left, $color_start, $color_end);
+    background-image: -o-linear-gradient(left, $color_start, $color_end);
+    background-image: -ms-linear-gradient(left, $color_start, $color_end);
+    background-image: linear-gradient(to right, $color_start, $color_end); 
+}
