@@ -6,12 +6,20 @@
         @include v-gradient(#5cbeef,#339ce4,#5cbeef);
     }
 }
+.header .header_con{
+    background-color: #fff;
+}
 .new_Angle {
     position: absolute;
     left: 0;
     top: 0px;
 }
+
 //页面主体内容
+.page{
+    min-height: 500px;
+    *height: 500px;
+}
 .main_banner {
     min-width: 1200px;
     margin: 0 auto;
@@ -255,5 +263,15 @@
     }
 }
 
-
+//午后茶点页面
+.description{
+    margin: 0 auto;
+    td{
+        vertical-align: top;
+    }
+    .goods_h1_main{
+        padding-top: 5px;
+        text-align: center;
+    }
+}
 
