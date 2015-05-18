@@ -176,7 +176,8 @@ $(function() {
 				autoplay: 5000, //自动播放，不指定默认不播放，单位为ms
 				autoplayDisableOnInteraction: false,
 				speed: 1000,
-				paginationClickable: true //分页标记是否可点击
+				paginationClickable: true, //分页标记是否可点击
+				effect: 'fade'
 			});
 			//向左翻页
 			$(this).find('.arrow-left').on('click', function(e) {
@@ -270,5 +271,11 @@ $(function() {
 	}, function() {
 		$(this).find('p').css('display', 'none')
 	});
+	
+	//套餐推荐
+	$('.tuijian .ok').click(function(){
+		$(this).parents('.tuijian').hide();
+		$('.ui_mask').hide();
+	})
 
 })

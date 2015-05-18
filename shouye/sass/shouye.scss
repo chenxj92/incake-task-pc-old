@@ -263,7 +263,7 @@
     }
 }
 
-//午后茶点页面
+//午后茶点说明
 .description{
     margin: 0 auto;
     td{
@@ -274,4 +274,278 @@
         text-align: center;
     }
 }
+//HOT INCAKE 您可能还会喜欢的
+.goods_h3{
+    h3{
+        height: 1px;
+        margin: 0 auto;
+        width: 1200px;
+        background: #a0a0a0;
+        span{
+            display: inline-block;
+            background: #fff;
+            padding: 0 20px;
+            color: $_blue;
+            font-weight: normal;
+            font-size: 15px;
+            position: relative;
+            top: -12px;
+        }
+    }
+}
+//快捷入口
+.rukou{
+    text-align: center;
+    li{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 40px;
+        a{
+           font-size: 24px; 
+           color: #969495;
+           padding: 0 10px 3px;
+           &.active{
+               color: $_blue;
+               border-bottom: 5px solid $_blue;
+           }
+           .imooc-icon{
+               font-size: 44px;
+               position: relative;
+               top: -2px;
+               margin-right: 5px;
+               vertical-align: middle;
+           }
+        }
+    }
+}
+.search_container{
+    width: 1120px;
+    overflow: hidden;
+    margin: 36px auto 0;
+    label{
+        float: left;
+        margin-right: 32px;
+        line-height: 46px;
+        font-size: 20px;
+        .imooc-icon{
+            position: relative;
+            top: 6px;
+            font-size: 28px;
+        }
+        s{
+            width: 0;
+            height: 0;
+            margin-left: 18px;
+            display: inline-block;
+            border: 5px solid transparent;
+            border-top-color: #8c8c8c;
+        }
+    }
+     .search_box{
+        .search_group{
+            position: relative;
+            width: 800px;
+            border: 1px solid #bfbfbf;
+            overflow: hidden;
+            background: #fff;
+            input,button{
+                height: 44px;
+                border: none;
+                background: none;
+                outline: none;
+            }
+            input{
+                float: left;
+                line-height: 44px\9;
+                font-size: 24px;
+                text-indent: 10px;
+                padding-right: 50px;
+                width: 800px;
+            }
+            button{
+                position: absolute;
+                right: 0;
+                cursor: pointer;
+                width: 50px;
+                .imooc-icon{
+                    color: #969291;
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+    .quyu{
+        margin-top: 20px;
+        padding-right: 166px;
+        line-height: 2.4em;
+        a{
+            display: inline-block;
+            font-size: 18px;
+            margin-right: 36px;
+            &.active{
+                color: $_blue;
+            }
+        }
+    }
+}
+.class{
+    width: 1120px;
+    margin: 20px auto;
+    font-size: 18px;
+    span{
+        padding-right: 14px;
+        border-right: 1px solid #9b9b9b;
+        .imooc-icon{
+            font-size: 22px;
+            position: relative;
+            top: 3px;
+            margin-right: 5px;
+        }
+    }
+    a{
+        padding: 0 10px;
+        color: #727272;
+        &.active{
+            color: $_blue;
+        }
+    }
+}
+//推荐弹出框样式
+.tuijian{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -300px;
+    background: #fff;
+    z-index: 999999999;
+    h5{
+        text-align: center;
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: normal;
+    }
+    h4{
+        text-align: center;
+        color: #005db3;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 2.5em;
+        span{
+            font-weight: bold;
+        }
+    }
+    .inner_box{
+        width: 400px;
+        margin: 0px auto;
+        overflow: hidden;
+        img{
+            float: left;
+            margin-right: 20px;
+            width: 200px;
+        }
+        h6{
+            font-size: 18px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+        p{
+            font-size: 20px;
+            strong{
+                color: red;
+                font-size: 1.5em;
+            }
+            span{
+                color: red;
+            }
+        }
+    }
+    .ok{
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+        display: block;
+        width: 200px;
+        height: 50px;
+        margin: 20px auto;
+        background: #333a70;
+        border: none;
+        outline: none;
+    }
+}
+.yhq_container{
+    ul{
+        overflow: hidden;
+        padding-left: 20px;
+        margin-right: -10px;
+        margin-bottom: -26px;
+    }
+    li{
+        $color:#065cb3;
+        width: 570px;
+        height: 250px;
+        float: left;
+        margin-right: 28px;
+        margin-bottom: 28px;
+        border: 1px solid #dddddd;
+        @include v-gradient(#fff,#f2f4f3,#f8f8f8);
+        .left{
+            float: left;
+            padding: 40px 0 0 50px;
+            h2{
+                font-size: 26px;
+                color:  $color;
+            }
+            h3{
+                font-size: 20px;
+                color:  $color;
+                margin: 10px 0;
+                font-weight: normal;
+            }
+            p{
+                color:  $color;
+                font-size: 14px;
+            }
+            div{
+                color:  $color;
+                font-size: 30px;
+                margin-top: 10px;
+                del{
+                    color: #979596;
+                    font-size: 0.8em;
+                }
+                span{
+                    font-size: 2em;
+                }
+            }
+        }
+        .right{
+            float: right;
+            margin-right: 50px;
+            margin-top: 35px;
+            img{
+                vertical-align: top;
+            }
+            a{
+                color: #fff;
+                display: block;
+                text-align: center;
+                line-height: 50px;
+                font-size: 23px;
+                margin-top: 16px;
+                @include v-gradient(#5ab8ec,#3399e1,#47a9e6);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
 

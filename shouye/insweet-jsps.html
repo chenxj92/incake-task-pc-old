@@ -27,7 +27,7 @@
 		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/shouye.css" />
 		<link rel="stylesheet" type="text/css" href="css/fonts.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/script1.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/list_v0.js" type="text/javascript" charset="utf-8"></script>
@@ -181,8 +181,7 @@
 						</td>
 						<td>
 							<div class="goods_h1_main">
-								<h2>午后茶点</h2> 下午茶是英国17世纪时期的产物,一边就着西式糕点喝茶，悄然独坐
-								<br> 或是一二好友闲谈，如梦浮生中不免增添些许温暖，这就颇得源自遥远的英国维多利亚时代的下午茶的真义。
+								<h2 style="font-size: 38px;font-weight: normal;min-width: 200px;">急速配送</h2> 急速时代，急速配送
 							</div>
 						</td>
 						<td>
@@ -193,7 +192,7 @@
 			</table>
 			<ul class="rukou">
 				<li>
-					<a href="#"><i class="imooc-icon">&#xe621;</i>急速配送</a>
+					<a href="#" class="active"><i class="imooc-icon">&#xe621;</i>急速配送</a>
 				</li>
 				<li>
 					<a href="#"><i class="imooc-icon">&#xe625;</i>套餐预定</a>
@@ -202,6 +201,36 @@
 					<a href="#"><i class="imooc-icon">&#xe620;</i>优惠券</a>
 				</li>
 			</ul>
+			<div class="search_container">
+				<div class="search_box">
+					<label><i class="imooc-icon">&#xe60b;</i>商圈<s></s>
+					</label>
+					<div class="search_group">
+						<input type="search" placeholder="输入您的订单地址" name="" id="" value="" />
+						<button><i class="imooc-icon">&#xe62b;</i>
+						</button>
+					</div>
+				</div>
+				<div class="quyu">
+					<a href="javascript:;" class="active">卢湾区</a>
+					<a href="javascript:;">徐汇区</a>
+					<a href="javascript:;">静安区</a>
+					<a href="javascript:;">长宁区</a>
+					<a href="javascript:;">闵行区</a>
+					<a href="javascript:;">浦东新区</a>
+					<a href="javascript:;">黄埔区</a>
+					<a href="javascript:;">普陀区</a>
+					<a href="javascript:;">闸北区</a>
+					<a href="javascript:;">虹口区</a>
+					<a href="javascript:;">杨浦区</a>
+					<a href="javascript:;">宝山区</a>
+					<a href="javascript:;">松江区</a>
+					<a href="javascript:;">嘉定区</a>
+					<a href="javascript:;">青浦区</a>
+					<a href="javascript:;">奉贤区</a>
+					<a href="javascript:;">不限</a>
+				</div>
+			</div>
 			<div class="class">
 				<span><i class="imooc-icon">&#xe62a;</i>分类</span>
 				<a href="#" class="active">甜品</a>
@@ -387,10 +416,6 @@
 						</ul>
 					</div>
 				</div>
-				<!-- <div class="bg_top"></div>
-			<div class="bg">
-			</div>
-			<div class="bg_bot"></div> -->
 			</div>
 			<!--页面主要内容end-->
 		</div>
@@ -411,7 +436,7 @@
 			</a>
 		</div>
 		<!--朦层-->
-		<div class="ui_mask"></div>
+		<div class="ui_mask" style="display: block;"></div>
 		<!--切换城市清空购物车提醒start-->
 		<div class="ui_popup w_text" id="coupon_city" style="width:350px; height:160px;">
 			<h4 class="fn_clear">
@@ -429,6 +454,18 @@
 			</div>
 		</div>
 		<!--切换城市清空购物车提醒end-->
+		<!--更多下午茶套餐预定推荐start-->
+		<div class="tuijian">
+			<h5>你所在的位置无法急速配送</h5>
+			<h4>更多<span>下午茶套餐</span>预定推荐</h4>
+			<div class="inner_box">
+				<img src="pic/01.jpg"/>
+				<h6>克拉情人杯<br />Carat Love</h6>
+				<p><strong>8折</strong>原价<del>68.00</del><br />套餐价：<span>32.00</span></p>
+			</div>
+			<button class="ok">确定</button>
+		</div>
+		<!--更多下午茶套餐预定推荐end-->
 	</body>
 
 </html>
