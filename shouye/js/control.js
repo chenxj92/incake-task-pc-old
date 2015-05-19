@@ -276,6 +276,18 @@ $(function() {
 	$('.tuijian .ok').click(function(){
 		$(this).parents('.tuijian').hide();
 		$('.ui_mask').hide();
-	})
+	});
+	
+	//分类
+	$('.class a').click(function(){
+		$('.class a').removeClass('active');
+		$(this).addClass('active');
+	});
+	
+	//区域选择
+	$('.quyu a').click(function(){
+		$('.quyu a').removeClass('active');
+		$(this).addClass('active');
+	});
 
 })
