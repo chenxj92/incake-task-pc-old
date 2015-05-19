@@ -165,12 +165,15 @@ $(function() {
 	})
 })
 
-//首页轮播
+
 $(function() {
+	//首页轮播
 	$('.main_banner').each(function(index) {
 		var count = $(this).find(".swiper-slide").length;
 		if (count > 1) {
 			var $this = $(this).swiper({
+				nextButton: '.arrow-right',
+				prevButton: '.arrow-left',
 				pagination: '.pagination' + index, //分页标记
 				loop: true, //循环
 				autoplay: 5000, //自动播放，不指定默认不播放，单位为ms
@@ -178,16 +181,6 @@ $(function() {
 				speed: 1000,
 				paginationClickable: true, //分页标记是否可点击
 				effect: 'fade'
-			});
-			//向左翻页
-			$(this).find('.arrow-left').on('click', function(e) {
-				e.preventDefault() //阻止默认的
-				$this.slidePrev() //前一个
-			});
-			//向右翻页
-			$(this).find('.arrow-right').on('click', function(e) {
-				e.preventDefault() //阻止默认的
-				$this.slideNext() //后一个
 			});
 			$(this).hover(function() {
 				$this.stopAutoplay();
@@ -219,7 +212,7 @@ $(function() {
 			});
 		}
 	});
-	
+
 	//产品展示轮播
 	$('.lunbo_banner').each(function() {
 		var count = $(this).find(".swiper-slide").length;
@@ -241,7 +234,7 @@ $(function() {
 			});
 		}
 	});
-	
+
 	//广告位轮播
 	$('.ad_banner').each(function() {
 		var count = $(this).find(".swiper-slide").length;
@@ -271,21 +264,21 @@ $(function() {
 	}, function() {
 		$(this).find('p').css('display', 'none')
 	});
-	
+
 	//套餐推荐
-	$('.tuijian .ok').click(function(){
+	$('.tuijian .ok').click(function() {
 		$(this).parents('.tuijian').hide();
 		$('.ui_mask').hide();
 	});
-	
+
 	//分类
-	$('.class a').click(function(){
+	$('.class a').click(function() {
 		$('.class a').removeClass('active');
 		$(this).addClass('active');
 	});
-	
+
 	//区域选择
-	$('.quyu a').click(function(){
+	$('.quyu a').click(function() {
 		$('.quyu a').removeClass('active');
 		$(this).addClass('active');
 	});
