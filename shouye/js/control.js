@@ -50,7 +50,7 @@ $(function() {
 			}
 		}
 	})
-})
+});
 var qianggou = function(begintime, endtime) {
 	//            alert(begintime + ":" + endtime);
 	var time_start = new Date(begintime).getTime();
@@ -151,36 +151,43 @@ function countDown(date_start, date_end, id, num) {
 				clearInterval(timer);
 			}
 		}, 1000);
-	}
+	};
 	//自定义信息提示
 
 function CommenMsg(msg) {
 	$(".ui_popup").hide();
 	$("#coupon_turemsg").popupFn();
 	$("#commenmsg").html(msg);
-}
+};
 $(function() {
 	$(".float_banner .box_close").click(function() {
 		$(".float_banner").hide();
 	})
-})
+});
 
 
-$(function() {
+;$(function() {
 	//首页轮播
 	$('.main_banner').each(function(index) {
 		var count = $(this).find(".swiper-slide").length;
 		if (count > 1) {
 			var $this = $(this).swiper({
-				nextButton: '.arrow-right',
-				prevButton: '.arrow-left',
 				pagination: '.pagination' + index, //分页标记
 				loop: true, //循环
 				autoplay: 5000, //自动播放，不指定默认不播放，单位为ms
 				autoplayDisableOnInteraction: false,
 				speed: 1000,
-				paginationClickable: true, //分页标记是否可点击
-				effect: 'fade'
+				paginationClickable: true //分页标记是否可点击
+			});
+			//向左翻页
+			$(this).find('.arrow-left').on('click', function(e) {
+				e.preventDefault() //阻止默认的
+				$this.swipePrev() //前一个
+			});
+			//向右翻页
+			$(this).find('.arrow-right').on('click', function(e) {
+				e.preventDefault() //阻止默认的
+				$this.swipeNext() //后一个
 			});
 			$(this).hover(function() {
 				$this.stopAutoplay();
@@ -189,7 +196,7 @@ $(function() {
 			});
 		} else {
 			$(this).swiper({
-				autoplay: false, //自动播放，不指定默认不播放，单位为ms
+				autoplay: false //自动播放，不指定默认不播放，单位为ms
 			});
 			$(this).find('.arrow-left').hide();
 			$(this).find('.arrow-right').hide();
@@ -204,11 +211,11 @@ $(function() {
 				loop: true, //循环
 				autoplay: 3000, //自动播放，不指定默认不播放，单位为ms
 				autoplayDisableOnInteraction: false,
-				speed: 500,
+				speed: 500
 			});
 		} else {
 			$(this).swiper({
-				autoplay: false, //自动播放，不指定默认不播放，单位为ms
+				autoplay: false //自动播放，不指定默认不播放，单位为ms
 			});
 		}
 	});
@@ -221,7 +228,7 @@ $(function() {
 				loop: true, //循环
 				autoplay: 3000, //自动播放，不指定默认不播放，单位为ms
 				autoplayDisableOnInteraction: false,
-				speed: 500,
+				speed: 500
 			});
 			$(this).hover(function() {
 				$this.stopAutoplay();
@@ -230,7 +237,7 @@ $(function() {
 			});
 		} else {
 			$(this).swiper({
-				autoplay: false, //自动播放，不指定默认不播放，单位为ms
+				autoplay: false //自动播放，不指定默认不播放，单位为ms
 			});
 		}
 	});
@@ -241,10 +248,10 @@ $(function() {
 		if (count > 1) {
 			var $this = $(this).swiper({
 				loop: true, //循环
-				direction: 'vertical',
+				mode: 'vertical',
 				autoplay: 3000, //自动播放，不指定默认不播放，单位为ms
 				autoplayDisableOnInteraction: false,
-				speed: 500,
+				speed: 500
 			});
 			$(this).hover(function() {
 				$this.stopAutoplay();
@@ -253,7 +260,7 @@ $(function() {
 			});
 		} else {
 			$(this).swiper({
-				autoplay: false, //自动播放，不指定默认不播放，单位为ms
+				autoplay: false //自动播放，不指定默认不播放，单位为ms
 			});
 		}
 	});
@@ -283,4 +290,4 @@ $(function() {
 		$(this).addClass('active');
 	});
 
-})
+});

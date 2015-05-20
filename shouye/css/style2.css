@@ -66,7 +66,7 @@ z-index: 99999998;
 .header .header_con{height:87px;min-width:1200px;margin:0 auto;  padding-top:5px;background:url(../img/nav_z_03.jpg) bottom center repeat-x;}
 .header .header_con .nav .fn_right{width:auto\9;}
 .header .header_con .w{position:relative;}
-.header .header_con .home_link{width:130px;height:130px;background:url(../img/dunpai.png) center no-repeat;position:absolute;left:50%;top:-23px;margin-left:-60px;background-size: contain;}
+.header .header_con .home_link{width:123px;height:129px;background:url(../img/dunpai.png) center no-repeat;position:absolute;left:50%;top:-23px;margin-left:-61px;background-size: contain;}
 .header .top_info{position:relative;z-index:999;}
 .header .wx{margin:0 5px;vertical-align:middle;position:relative;width:18px;height:15px;}
 .header .wx *{vertical-align:middle;position:relative;top:-4px;}
@@ -174,12 +174,12 @@ z-index: 99999998;
 .index_module .tab_con .goods_list li{float:left;width:158px;padding-top:10px;height:158px;background:url(../img/goods_list_line.gif) no-repeat center right;}.index_module .tab_con .goods_list li .info{background-color:#9C9D9D;color:#fff;text-align:center;display:none;padding:5px 0;position:absolute;}.index_module .tab_con .goods_list li .info a{color:#fff;}
 
 
-.ban_main{position:relative;width:1200px;margin:0 auto;z-index:9;}
+.ban_main{position:relative;z-index:9;}
 .ban_main .left_ban{width:84px;position:absolute;left:0;top:102px;border:1px solid #d5d5d5;background:#fff;padding:10px;}
 .ban_main .left_ban .box_close{position:absolute;right:-5px;top:-8px;width:11px;height:11px;display:inline-block;}
 .ban_main .left_ban h5{text-align:center;border-bottom:1px solid #d5d5d5;padding-bottom:5px;}
 .ban_main .left_ban .box_con{padding-top:5px;font-size:12px;}
-.ban_main .right_ban{width:46px;height:187px;position:absolute;right:0;top:102px;}.ban_main .right_ban .box_close{position:absolute;right:-5px;top:-8px;width:11px;height:11px;display:inline-block;}
+.ban_main .right_ban{width:46px;height:187px;position:absolute;right:50%;top:102px;margin-right: -590px;}.ban_main .right_ban .box_close{position:absolute;right:-5px;top:-8px;width:11px;height:11px;display:inline-block;}
 .ban_main .right_ban .bg{width:46px;height:187px;background:url(../img/ban/right_ban.gif) no-repeat;}
 .ban_main .right_ban .link{height:46px;display:block;width:46px;margin-bottom:1px;}.ban_main .right_ban .link .code{display:none;}
 .ban_main .right_ban .link:hover .code{display:block;}
@@ -441,7 +441,7 @@ label .radio{position:relative;top:-1px;margin-right:5px;}
 .base_left{width:680px;float:left;}
 .base_left_i{float:left;padding:12px; padding-top:20px; width:220px; overflow:hidden;}
 .base_left_i a{padding:20px;}
-.base_left_z{float:left;margin-top:30px;width:432px; overflow:hidden;}
+.base_left_z{float:left;width:432px; overflow:hidden;}
 .base_left_z dl{float:left;width:100px; margin-right:8px; text-align:center; font-size:12px;}
 .base_left_z dt{font-weight:bold;}
 .base_right{height:150px;border-left:1px solid #408ac4;float:left;margin:10px;font-size:13px; margin-top:20px;}
