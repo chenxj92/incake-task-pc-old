@@ -33,12 +33,25 @@ $_gray:#9C9D9D;
     -moz-opacity: $value;
 }
 
-
+//清楚浮动
+@mixin fn_clear{
+    .fn_clear{
+        zoom: 1;
+        &:after{
+            clear: both;
+            display: block;
+            font-size: 0;
+            visibility: hidden;
+            height: 0;
+            content: "";
+        }
+    }
+}
 
 //重置
 @mixin reset-normalize
 {
-    article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary {
+    article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
         display: block;
     }
     audio,canvas,video {

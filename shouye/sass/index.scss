@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "bianliang";
+//顶部导航
 body .index{
     padding-top: 0px;
 }
@@ -24,10 +25,6 @@ body .index{
   margin-left: 25px;
 }
 
-.foot_div {
-  margin-top: 0px;
-}
-
 .goods_kwsx {
   cursor: pointer;
 }
@@ -50,8 +47,7 @@ body .index{
 }
 
 .ComList_checkbox {
-  opacity: 0;
-  filter: alpha(opacity = 0);
+    @include opacity(0);
 }
 
 .ComList_forCheckbox {
@@ -303,10 +299,8 @@ body .index{
   }
 }
 
-
 .ui_mask {
-  opacity: 0.8;
-  filter: alpha(opacity = 80);
+    @include opacity(0.8);
 }
 
 .ui_popup {
@@ -326,65 +320,6 @@ body .index{
         height: auto;
       }
     }
-  }
-}
-
-.base {
-  height: 170px;
-  border-top: 1px solid #408ac4;
-  margin: 0px;
-}
-
-.base_left {
-  width: 680px;
-  float: left;
-}
-
-.base_left_i {
-  float: left;
-  padding: 12px;
-  padding-top: 20px;
-  width: 220px;
-  overflow: hidden;
-  a {
-    padding: 20px;
-  }
-}
-
-.base_left_z {
-  float: left;
-  width: 432px;
-  overflow: hidden;
-  dl {
-    float: left;
-    width: 100px;
-    margin-right: 8px;
-    text-align: center;
-    font-size: 12px;
-  }
-  dt {
-    font-weight: bold;
-  }
-}
-
-.base_right {
-  height: 150px;
-  border-left: 1px solid #408ac4;
-  float: left;
-  margin: 10px;
-  font-size: 13px;
-  margin-top: 20px;
-  dt {
-    float: left;
-    line-height: 2em;
-    margin-right: 35px;
-    margin-top: 10px;
-  }
-  dd {
-    float: left;
-    width: 258px;
-    height: 140px;
-    line-height: 1.7em;
   }
 }
 
@@ -450,26 +385,10 @@ body .index{
   color: #3f87c2;
 }
 
-.qg_time {
-  width: 220px;
-  height: 40px;
-  position: absolute;
-  top: 84px;
-  right: 57px;
-  *top: 84px;
-  left: 70px;
-}
-
-.kill {
-  padding-left: 10px;
-  padding-top: 10px;
-}
-
 .kill_text {
-  width: 260px;
   height: 70px;
   margin-left: 24px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .kill_left, .kill_left_img {
@@ -480,7 +399,6 @@ body .index{
 .kill_right {
   float: right;
   text-align: right;
-  padding-right: 10px;
 }
 
 .time-item {
@@ -598,22 +516,6 @@ h4 .colon {
 .imgdiv {
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.base dt {
-  img {
-    height: 120px;
-    width: 120px;
-  }
-  p {
-    margin-top: -15px;
-    text-align: center;
-  }
-}
-
-.base_dl {
-  margin-top: -10px;
-  margin-left: 46px;
 }
 
 .base_left_z {
@@ -744,12 +646,9 @@ h4 .colon {
         text-align: center;
         margin-top: 8px;
     }
-    .qg_time{
-        position: static;
-        margin: 0 auto;
-    }
     .kill{
         padding-left: 0;
+        padding-top: 10px;
         margin-bottom: 16px;
     }
     .count-down{
@@ -822,7 +721,6 @@ h4 .colon {
     margin: 0 auto;
     .max_width{
         margin: 0;
-//      margin-right: -30px;
         margin-top: 30px;
         padding: 0;
         overflow: hidden;
@@ -872,24 +770,88 @@ h4 .colon {
     padding-top: 0;
 }
 //导航样式
-.base_left{
-    position: relative;
+.base {
+    overflow: hidden;
+    padding-top: 20px;
+  border-top: 1px solid #408ac4;
+  margin-bottom: 20px;
 }
+
+.base_left_z {
+    margin-left: 240px;
+    padding-top: 10px;
+  width: 432px;
+  overflow: hidden;
+  dl {
+    float: left;
+    width: 100px;
+    margin-right: 8px;
+    text-align: center;
+    font-size: 12px;
+  }
+  dt {
+    font-weight: bold;
+  }
+}
+
+.base_right {
+  height: 150px;
+  border-left: 1px solid #408ac4;
+  float: left;
+  font-size: 13px;
+  dt {
+    float: left;
+    margin-right: 35px;
+  }
+  dd {
+    float: left;
+    h6{
+        font-weight: normal;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    p{
+      font-size: 12px;
+      line-height: 1.8em;
+      width: 320px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.base dt {
+  img {
+    height: 120px;
+    width: 120px;
+    vertical-align: top;
+  }
+  p {
+    text-align: center;
+    line-height: 1;
+  }
+}
+
+.base_dl {
+    overflow: hidden;
+    margin-left: 46px;
+}
+
+.base_left {
+  width: 680px;
+  float: left;
+  position: relative;
+}
+
 .base_left_i{
     position: absolute;
-    float: none;
-    padding-top: 12px;
-    left: 0;
+    width: 220px;
+    overflow: hidden;
+    left: 12px;
     .imooc-icon{
         color: #0d2d90;
         font-size: 149px;
         padding: 0;
         text-decoration: none;
     }
-}
-.base_left_z{
-    float: none;
-    margin-left: 240px;
-    padding-top: 30px;
 }
 

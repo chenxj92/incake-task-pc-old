@@ -71,6 +71,16 @@ body .page {
   background-image: -ms-linear-gradient(top, #f4f4f4, #fff);
   background-image: linear-gradient(to bottom, #f4f4f4, #fff); }
 
+.fn_clear {
+  zoom: 1; }
+.fn_clear:after {
+  clear: both;
+  display: block;
+  font-size: 0;
+  visibility: hidden;
+  height: 0;
+  content: ""; }
+
 .ban_main {
   position: relative;
   width: 1200px;
@@ -133,18 +143,14 @@ body .page {
   display: none; }
 
 .header {
-  height: 91px;
-  z-index: 9;
-  min-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
+  height: 92px;
+  min-width: 1200px;
   position: relative;
-  z-index: 88888888; }
+  z-index: 9; }
 .header .header_con {
   height: 87px;
   background: url(../img/nav_z_03.jpg) bottom center repeat-x #fff;
   min-width: 1200px;
-  margin: 0 auto;
   padding-top: 5px; }
 .header .header_con .nav .fn_right {
   width: auto\9; }
@@ -160,7 +166,6 @@ body .page {
   margin-left: -61px;
   background-size: contain; }
 .header .top_info {
-  position: relative;
   z-index: 999; }
 .header .wx {
   margin: 0 5px;
@@ -168,8 +173,7 @@ body .page {
   position: relative; }
 .header .wx * {
   vertical-align: middle;
-  position: relative;
-  top: -4px; }
+  position: relative; }
 .header .wx:hover .code {
   display: block; }
 .header .wx .code {
@@ -304,16 +308,6 @@ body .page {
   left: 0;
   top: 0px; }
 
-.fn_clear {
-  zoom: 1; }
-.fn_clear:after {
-  clear: both;
-  display: table;
-  font-size: 0;
-  content: "";
-  visibility: hidden;
-  height: 0; }
-
 .fn_left, .fn_left1 {
   float: left; }
 
@@ -322,11 +316,8 @@ body .page {
   line-height: 1.5em; }
 
 .footer {
-  width: 1200px;
-  margin: 0px auto;
   overflow: hidden;
-  padding-bottom: 15px;
-  clear: both; }
+  padding-bottom: 15px; }
 .footer div {
   width: 1200px;
   margin: 0 auto;
@@ -335,23 +326,18 @@ body .page {
   float: left; }
 .footer .foot {
   font-size: 12px;
-  float: none;
   overflow: hidden;
   display: block;
-  margin-left: 10px;
   margin-top: 10px;
   padding-left: 10px;
-  width: auto;
-  height: auto;
   text-decoration: none; }
 
 .foot_div {
-  width: 100%;
-  height: 25px;
-  margin-top: 17px;
-  position: fixed;
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
   filter: alpha(opacity=0);
-  opacity: 0; }
+  -moz-opacity: 0; }
 
 .ui_mask {
   background-color: #000;

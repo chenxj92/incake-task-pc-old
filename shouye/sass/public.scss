@@ -5,13 +5,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   padding: 0;
   margin: 0;
 }
+
 html {
   *background-image: url(aboutlank);
   *background-attachment: fixed;
 }
+
 img, table, td, th {
   border: 0;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -76,6 +79,8 @@ body{
     @include v-gradient(#f4f4f4,#fff,#f4f4f4);
   }    
 }
+//清楚浮动
+@include fn_clear;
 //浮动内容
 .ban_main {
   position: relative;
@@ -151,18 +156,14 @@ body{
 }
 //导航
 .header {
-    height: 91px;
-    z-index: 9;
-  min-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  z-index: 88888888;
-  .header_con {
-      height: 87px;
-      background: url(../img/nav_z_03.jpg) bottom center repeat-x #fff;
+    height: 92px;
     min-width: 1200px;
-    margin: 0 auto;
+    position: relative;
+    z-index: 9;
+  .header_con {
+    height: 87px;
+    background: url(../img/nav_z_03.jpg) bottom center repeat-x #fff;
+    min-width: 1200px;
     padding-top: 5px;
     .nav .fn_right {
       width: auto\9;
@@ -182,7 +183,6 @@ body{
     }
   }
   .top_info {
-    position: relative;
     z-index: 999;
   }
   .wx {
@@ -192,7 +192,6 @@ body{
     * {
       vertical-align: middle;
       position: relative;
-      top: -4px;
     }
     &:hover .code {
       display: block;
@@ -244,9 +243,9 @@ body{
       border-right: 1px solid #e4e4e4;
       text-decoration: none;
       &:hover{
-             @include v-gradient(#5cbeef,#339ce4,#5cbeef);
-             background: url(../img/header_city_bg.gif) repeat-x\9;
-             color: #fff;
+         @include v-gradient(#5cbeef,#339ce4,#5cbeef);
+         background: url(../img/header_city_bg.gif) repeat-x\9;
+         color: #fff;
         }
     }
     .right_link {
@@ -342,25 +341,13 @@ body{
   margin: 0 auto;
 }
 .new_Angle {
-    position: absolute;
-    left: 0;
-    top: 0px;
-}
-//清楚浮动
-.fn_clear {
-  zoom: 1;
-  &:after {
-    clear: both;
-    display: table;
-    font-size: 0;
-    content: "";
-    visibility: hidden;
-    height: 0;
-  }
+  position: absolute;
+  left: 0;
+  top: 0px;
 }
 
 //预设
-.fn_left, .fn_left1 {
+.fn_left,.fn_left1 {
   float: left;
 }
 
@@ -369,42 +356,32 @@ body{
   line-height: 1.5em;
 }
 
-//页脚样式
+//页脚以及版权样式
 .footer{
-    width: 1200px;
-    margin: 0px auto;
     overflow: hidden;
     padding-bottom: 15px;
-    clear: both;
     div{
-        width: 1200px;
-         margin: 0 auto;
-         overflow: hidden;
+      width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
     }
     img{
-        float: left;
+      float: left;
     }
     .foot{
-        font-size: 12px;
-        float: none;
-        overflow: hidden;
-        display: block;
-        margin-left: 10px;
-        margin-top: 10px;
-        padding-left: 10px;
-        width: auto;
-        height: auto;
-        text-decoration: none;
+      font-size: 12px;
+      overflow: hidden;
+      display: block;
+      margin-top: 10px;
+      padding-left: 10px;
+      text-decoration: none;
     }
 }
 
 .foot_div {
-  width: 100%;
-  height: 25px;
-  margin-top: 17px;
-  position: fixed;
-  filter: alpha(opacity = 0);
-  opacity: 0;
+  height: 0px;
+  overflow: hidden;
+  @include opacity(0);
 }
 
 //朦层
@@ -447,8 +424,3 @@ body{
     }
   }
 }
-
-
-
-
-
