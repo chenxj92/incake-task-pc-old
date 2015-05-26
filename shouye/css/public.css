@@ -169,11 +169,9 @@ body .page {
   z-index: 999; }
 .header .wx {
   margin: 0 5px;
-  vertical-align: middle;
   position: relative; }
-.header .wx * {
-  vertical-align: middle;
-  position: relative; }
+.header .wx img {
+  vertical-align: middle; }
 .header .wx:hover .code {
   display: block; }
 .header .wx .code {
