@@ -72,11 +72,6 @@ var qianggou = function(begintime, endtime) {
 	}
 	return true;
 }
-$(function() {
-	$(".Afternoon_tea li a").mousemove(function() {
-		$(".Afternoon_tea li div").show();
-	});
-})
 
 function countDown(date_start, date_end, id, num) {
 		var hour_elem1 = $(id).find('.hour1'),

@@ -109,53 +109,6 @@
   margin-bottom: 20px;
 }
 
-.index_module {
-  width: 1280px;
-  background: url(../img/index_module_bg.png) no-repeat;
-  margin: 0 auto;
-  position: relative;
-  *position: static;
-  left: 0px;
-  z-index: 1;
-  margin-top: -37px;
-  *margin-top: -38px;
-  padding-top: 60px;
-  .fn_clear {
-    padding: 10px 50px;
-  }
-  .left_box {
-    width: 839px;
-    position: relative;
-  }
-  .fn_right .img01 {
-    margin-bottom: 10px;
-  }
-  .tab {
-    border: 1px solid #D5D5D5;
-    height: 29px;
-    line-height: 29px;
-    background: url(../img/index_tab_bg.gif) repeat-x;
-    width: 839px;
-    overflow: hidden;
-    _zoom: 1;
-    ul {
-      width: 1200px;
-    }
-    li {
-      width: 279px;
-      text-align: center;
-      color: #595757;
-      float: left;
-      border-right: 1px solid #B6B5B5;
-      cursor: pointer;
-      &.on {
-        color: #0160AF;
-        background: url(../img/index_tab_bg_on.gif) repeat-x;
-      }
-    }
-  }
-}
-
 .goods_h1 {
   line-height: 26px;
   margin: 0 auto;
@@ -174,134 +127,7 @@
   }
 }
 
-.goods_list_page {
-  margin: 0 auto;
-  .bg_top {
-    background: url(../img/goods_list_top.png) no-repeat;
-    width: 1226px;
-    height: 27px;
-  }
-  .bg {
-    background: url(../img/goods_list_con.png) repeat-y;
-  }
-  .bg_bot {
-    background: url(../img/goods_list_bot.png) no-repeat;
-    height: 40px;
-    width: 1226px;
-  }
-  .goods_bg {
-    width: 1212px;
-    margin: 0 auto;
-    color: #666;
-    font-size: 14px;
-    .goods_bg_content {
-      width: 1212px;
-      margin: 0 auto;
-      background: url(../img/goods_bg_con.png) repeat-y;
-      .iteam {
-        padding: 0 40px;
-      }
-      .img {
-        width: 200px;
-        height: 200px;
-        display: block;
-      }
-    }
-    .goods_bg_top {
-      width: 1212px;
-      height: 30px;
-      background: url(../img/goods_bg_top.png) no-repeat;
-    }
-    .goods_bg_bot {
-      width: 1212px;
-      height: 30px;
-      background: url(../img/goods_bg_bot.png) no-repeat;
-      margin-bottom: 30px;
-    }
-    .iteam {
-      height: 200px;
-      clear: both;
-    }
-    .goods_info {
-      float: left;
-      width: 610px;
-      padding: 20px 20px 0 60px;
-    }
-    h3 {
-      font-size: 25px;
-      color: #0160AF;
-      font-weight: normal;
-      a {
-        color: #0160AF;
-        &:hover {
-          text-decoration: none;
-        }
-      }
-    }
-    .info {
-      line-height: 24px;
-      padding: 10px 0;
-    }
-    .love {
-      vertical-align: middle;
-      * {
-        vertical-align: middle;
-      }
-    }
-  }
-  .goods_btn {
-    border-left: 1px solid #ccc;
-    padding-left: 50px;
-    margin-top: 30px;
-    .btn {
-      width: 161px;
-      height: 38px;
-      background: url(../img/goods_btn.gif) no-repeat;
-      display: block;
-      text-align: center;
-      line-height: 36px;
-      font-size: 16px;
-      margin-bottom: 10px;
-      position: relative;
-      .btn_zu {
-        position: absolute;
-        top: 37px;
-        left: 0;
-        z-index: 2;
-        display: none;
-      }
-      i {
-        color: #C41019;
-      }
-      * {
-        vertical-align: middle;
-      }
-      .small_btn {
-        width: 161px;
-        height: 31px;
-        line-height: 31px;
-        background: url(../img/btn_slide_down_menu.gif) no-repeat;
-        display: block;
-        &:hover {
-          background: url(../img/btn_slide_down_menu_on.gif) no-repeat;
-          color: #fff;
-          * {
-            color: #fff;
-          }
-        }
-      }
-    }
-    .sha_btn {
-      background: url(../img/dian_default.gif) no-repeat;
-      text-indent: -999em;
-      overflow: hidden;
-      _zoom: 1;
-      &:hover {
-        background: url(../img/dian_hover.gif) no-repeat;
-      }
-    }
-  }
-}
+
 
 #peijian_pop {
   h4 {
@@ -355,34 +181,8 @@
   }
 }
 
-.img_h3 {
-  text-align: center;
-  span {
-    display: none;
-  }
-}
-
 .div_btn {
   z-index: 2;
-}
-
-.goods_h3_list {
-  width: 1195px;
-  margin: 0 auto;
-  padding: 0 0 20px 0;
-  overflow: hidden;
-  .width {
-    width: 1400px;
-  }
-  .iteam {
-    background: url(../img/goods_h3_list.gif) no-repeat center right;
-    float: left;
-    width: 300px;
-    text-align: center;
-    p {
-      line-height: 40px;
-    }
-  }
 }
 
 .page_info {
