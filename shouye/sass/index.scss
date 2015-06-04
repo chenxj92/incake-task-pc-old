@@ -38,6 +38,34 @@ body .index{
     top: 0px;
   }
 }
+.ban_main{
+  .left_ban{
+    position: absolute;
+    left: 100px;
+    top: 102px;
+    width: 84px;
+    border: 1px solid #d5d5d5;
+    background: #fff;
+    padding: 10px;
+    h5{
+          text-align: center;
+          border-bottom: 1px solid #d5d5d5;
+          padding-bottom: 5px;
+    }
+    .box_close{
+          position: absolute;
+          right: -5px;
+          top: -8px;
+          width: 11px;
+          height: 11px;
+          display: inline-block;
+    }
+    .box_con{
+          padding-top: 5px;
+          font-size: 12px;
+    }
+  }    
+}
 
 //大轮播banner
 .main_banner {
@@ -74,6 +102,7 @@ body .index{
             vertical-align: top;
             border: none;
             width: 100%;
+            min-height: 500px;
         }
     }
     .pagination{

@@ -85,15 +85,14 @@ body{
 //浮动内容
 .ban_main {
   position: relative;
-  width: 1200px;
   margin: 0 auto;
   z-index: 9;
   .right_ban {
-    width: 46px;
-    height: 187px;
     position: absolute;
     right: 50%;
     top: 102px;
+    width: 46px;
+    height: 187px;
     margin-right: -590px;
     .box_close {
       position: absolute;
@@ -126,6 +125,14 @@ body{
       display: none;
     }
   }
+}
+.link_btn {
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  background-color: #333A70;
+  padding: 0 30px;
+  display: inline-block;
 }
 //顶部导航
 .header {
@@ -324,7 +331,6 @@ body{
 
 .fn_right {
   float: right;
-  line-height: 1.5em;
 }
 
 //页脚以及版权样式
@@ -366,7 +372,7 @@ body{
   _position: absolute;
   left: 0;
   top: 0;
-  z-index: 999999998;
+  z-index: 998;
   display: none;
 }
 
@@ -395,3 +401,4 @@ body{
     }
   }
 }
+
