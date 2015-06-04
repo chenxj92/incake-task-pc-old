@@ -175,7 +175,25 @@ body .index{
      display: inline-block;
   }
 }
-
+//下午茶模块
+.afternoon-tea{
+    float: right;
+    margin-right: 32px;
+    .title_banner{
+        .imooc-icon{
+            font-size: 42px;
+        }
+        p{
+            height: 33px;
+        }
+    }
+   .tea-box{
+       margin-top: 15px;
+       img{
+           vertical-align: top;
+       }
+   } 
+}
 //产品展示轮播
 .lunbo_banner{
     margin: 0;
@@ -197,9 +215,10 @@ body .index{
         position: absolute;
     }
     a {
-        color: $_blue;
         position: absolute;
         right: 10px;
+        bottom: 0;
+        color: $_blue;
         text-decoration: none;
     }
     p {
