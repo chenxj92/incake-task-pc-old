@@ -112,6 +112,9 @@ body .index{
     *width: 1200px;
     margin: 0 auto;
     height: 500px;
+    .swiper-wrapper{
+        background: transparent;
+    }
     .arrow-left{
         background: url(../img/arrows.png) no-repeat left top;
         position: absolute;
@@ -140,7 +143,6 @@ body .index{
         img{
             vertical-align: top;
             border: none;
-            width: 100%;
             min-height: 500px;
         }
     }
@@ -246,6 +248,7 @@ body .index{
 //下午茶模块
 .afternoon-tea{
     float: right;
+    *width: 225px;
     margin-right: 32px;
     margin-top: -20px;
     .title_banner{
@@ -277,6 +280,7 @@ body .index{
 }
 .title_banner {
     position: relative;
+    *zoom: 1;
     .imooc-icon{
         color: $_blue;
         font-size: 40px;
@@ -311,21 +315,24 @@ body .index{
 .product_list{
     width: 1050px;
     margin: 0 auto;
+    overflow: hidden;
     .max_width{
-        width: 1080px;
+        width: 1055px;
         margin: 0;
         margin-top: 30px;
         padding: 0;
-        @extend %fn_clear;
+        overflow: hidden;
         li{
             position: relative;
             float: left;
-            width: 240px;
-            height: 240px;
-            margin-right: 30px;
-            margin-bottom: 30px;
+            width: 180px;
+            height: 180px;
+            padding-left: 15px;
+            padding-right: 16px;
+            margin-bottom: 10px;
             text-align: center;
             list-style: none;
+            background: url(../img/goods_list_line.gif) right center no-repeat;
             img{
                 vertical-align: top;
                 width: 100%;
@@ -339,6 +346,7 @@ body .index{
                     bottom: 0;
                     left: 0;
                     width: 100%;
+                    width: 210px\9;
                     background: rgba(156,156,156,.6);
                     background: url(../img/black_transparent.png)\9;
                     color: #fff;
