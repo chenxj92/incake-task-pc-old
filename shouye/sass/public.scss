@@ -87,44 +87,6 @@ body{
   position: relative;
   margin: 0 auto;
   z-index: 9;
-  .right_ban {
-    position: absolute;
-    right: 50%;
-    top: 102px;
-    width: 46px;
-    height: 187px;
-    margin-right: -590px;
-    .box_close {
-      position: absolute;
-      right: -5px;
-      top: -8px;
-      width: 11px;
-      height: 11px;
-      display: inline-block;
-    }
-    .bg {
-      width: 46px;
-      height: 187px;
-      background: url(../img/ban/right_ban.gif) no-repeat;
-    }
-    .link {
-      height: 46px;
-      display: block;
-      width: 46px;
-      margin-bottom: 1px;
-      &:hover .code {
-        display: block;
-      }
-    }
-    .code {
-      min-width: 140px;
-      min-height: 140px;
-      position: absolute;
-      right: 46px;
-      top: 0;
-      display: none;
-    }
-  }
 }
 .link_btn {
   height: 36px;

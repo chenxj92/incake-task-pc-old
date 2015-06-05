@@ -1,6 +1,6 @@
 @charset "utf-8";
 //颜色
-$_blue:#3b87c1;
+$_blue:#0160AF;
 $_gray:#9C9D9D;
 //字体
 @mixin font-fm {
@@ -47,7 +47,16 @@ $_gray:#9C9D9D;
         }
     }
 }
-
+%fn_clear{
+    zoom: 1;
+    &:after{
+        clear: both;
+        display: block;
+        visibility: hidden;
+        height: 0;
+        content: '';
+    }
+}
 //重置
 @mixin reset-normalize
 {

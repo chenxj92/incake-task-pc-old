@@ -23,7 +23,7 @@ body .index{
   z-index: 999;
 }
 
-//浮动窗口样式
+//右下角浮动窗口样式
 .float_banner {
   position: fixed;
   right: 0px;
@@ -38,10 +38,11 @@ body .index{
     top: 0px;
   }
 }
+//头部浮动效果 主要内容有公告、分享
 .ban_main{
   .left_ban{
     position: absolute;
-    left: 100px;
+    left: 30px;
     top: 102px;
     width: 84px;
     border: 1px solid #d5d5d5;
@@ -64,7 +65,45 @@ body .index{
           padding-top: 5px;
           font-size: 12px;
     }
-  }    
+  } 
+  .right_ban {
+    position: absolute;
+    right: 50%;
+    top: 102px;
+    width: 46px;
+    height: 187px;
+    margin-right: -590px;
+    .box_close {
+      position: absolute;
+      right: -5px;
+      top: -8px;
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+    }
+    .bg {
+      width: 46px;
+      height: 187px;
+      background: url(../img/ban/right_ban.gif) no-repeat;
+    }
+    .link {
+      height: 46px;
+      display: block;
+      width: 46px;
+      margin-bottom: 1px;
+      &:hover .code {
+        display: block;
+      }
+    }
+    .code {
+      min-width: 140px;
+      min-height: 140px;
+      position: absolute;
+      right: 46px;
+      top: 0;
+      display: none;
+    }
+  }     
 }
 
 //大轮播banner
@@ -208,6 +247,7 @@ body .index{
 .afternoon-tea{
     float: right;
     margin-right: 32px;
+    margin-top: -20px;
     .title_banner{
         .imooc-icon{
             font-size: 42px;
@@ -225,10 +265,9 @@ body .index{
 }
 //产品展示轮播
 .lunbo_banner{
-    margin: 0;
-    margin-left: 32px;
-    width: 840px;
-    height: 340px;
+    width: 848px;
+    height: 227px;
+    margin: 10px 0 20px 42px;
 }
 //首页主要内容main_container
 .main_container{
@@ -273,27 +312,27 @@ body .index{
     width: 1050px;
     margin: 0 auto;
     .max_width{
+        width: 1080px;
         margin: 0;
         margin-top: 30px;
         padding: 0;
-        overflow: hidden;
-        width: 1080px;
+        @extend %fn_clear;
         li{
+            position: relative;
+            float: left;
             width: 240px;
             height: 240px;
-            float: left;
-            position: relative;
-            text-align: center;
-            list-style: none;
-            overflow: hidden;
             margin-right: 30px;
             margin-bottom: 30px;
+            text-align: center;
+            list-style: none;
             img{
                 vertical-align: top;
                 width: 100%;
             }
             a{
                 display: block;
+                overflow: hidden;
                 p{
                     display: none;
                     position: absolute;
@@ -321,100 +360,96 @@ body .index{
 
 //页尾快捷入口样式
 .index_module {
-  z-index: 8;
-  width: 1200px;
-  margin: 40px auto 0;
-  height: auto;
-  padding-top: 0;
-}
-.base {
-  overflow: hidden;
-  padding-top: 20px;
-  border-top: 1px solid #408ac4;
-  margin-bottom: 20px;
-  dt{
-      img{
-          height: 120px;
-          width: 120px;
-          vertical-align: top;
-      }
-      p{
-         text-align: center; 
-         line-height: 1;
-      }
-  }
-}
-.base_left_z {
-  margin-left: 240px;
-  padding-top: 10px;
-  width: 432px;
-  overflow: hidden;
-  dl {
-    float: left;
-    width: 100px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    text-align: center;
-    font-size: 12px;
-  }
-  dt {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  dd{
-      line-height: 1.8em;
-      a{
-          &:hover{
-              color: darken($_blue,10%);
+  padding-top: 40px;
+  background: #fff;
+  @at-root {
+    .base {
+      width: 1200px;
+      margin: 0 auto 20px;
+      padding-top: 20px;
+      border-top: 1px solid #408ac4;
+      dt{
+          img{
+              height: 120px;
+              width: 120px;
+              vertical-align: top;
+          }
+          p{
+             text-align: center; 
+             line-height: 1;
           }
       }
-  }
-}
-.base_right {
-  height: 150px;
-  border-left: 1px solid #408ac4;
-  overflow: hidden;
-  font-size: 13px;
-  dt {
-    float: left;
-    margin-right: 35px;
-  }
-  dd {
-    overflow: hidden;
-    h6{
-        font-weight: normal;
-        font-size: 14px;
-        margin-top: 5px;
     }
-    p{
-      font-size: 12px;
-      line-height: 1.8em;
-      margin-top: 5px;
-      text-align: justify;
+    .base_left_z {
+      margin-left: 240px;
+      padding-top: 10px;
+      width: 432px;
+      overflow: hidden;
+      dl {
+        float: left;
+        width: 100px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        text-align: center;
+        font-size: 12px;
+      }
+      dt {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      dd{
+          line-height: 1.8em;
+          a{
+              &:hover{
+                  color: darken($_blue,10%);
+              }
+          }
+      }
     }
-  }
-}
-
-.base_dl {
-    overflow: hidden;
-    margin-left: 46px;
-}
-
-.base_left {
-  width: 680px;
-  float: left;
-  position: relative;
-}
-
-.base_left_i{
-    position: absolute;
-    width: 220px;
-    overflow: hidden;
-    left: 12px;
-    .imooc-icon{
-        color: #0d2d90;
-        font-size: 149px;
-        padding: 0;
-        text-decoration: none;
+    .base_right {
+      height: 150px;
+      border-left: 1px solid #408ac4;
+      overflow: hidden;
+      font-size: 13px;
+      dt {
+        float: left;
+        margin-right: 35px;
+      }
+      dd {
+        overflow: hidden;
+        h6{
+            font-weight: normal;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        p{
+          font-size: 12px;
+          line-height: 1.8em;
+          margin-top: 5px;
+          text-align: justify;
+        }
+      }
     }
+    .base_dl {
+        overflow: hidden;
+        margin-left: 46px;
+    }
+    .base_left {
+      width: 680px;
+      float: left;
+      position: relative;
+    }
+    .base_left_i{
+        position: absolute;
+        width: 220px;
+        overflow: hidden;
+        left: 12px;
+        .imooc-icon{
+            color: #0d2d90;
+            font-size: 149px;
+            padding: 0;
+            text-decoration: none;
+        }
+    }
+  }     
 }
