@@ -313,22 +313,20 @@ body .index{
 
 //产品列表样式
 .product_list{
-    width: 1050px;
+    width: 1120px;
     margin: 0 auto;
     overflow: hidden;
     .max_width{
-        width: 1055px;
-        margin: 0;
         margin-top: 30px;
-        padding: 0;
+        margin-right: -5px;
         overflow: hidden;
         li{
             position: relative;
             float: left;
             width: 180px;
             height: 180px;
-            padding-left: 15px;
-            padding-right: 16px;
+            padding-left: 23px;
+            padding-right: 22px;
             margin-bottom: 10px;
             text-align: center;
             list-style: none;
@@ -346,13 +344,13 @@ body .index{
                     bottom: 0;
                     left: 0;
                     width: 100%;
-                    width: 210px\9;
+                    width: 225px\9;
+                    margin: 0;
+                    padding: 5px 0;
                     background: rgba(156,156,156,.6);
                     background: url(../img/black_transparent.png)\9;
                     color: #fff;
-                    padding: 5px 0;
                     text-decoration: none\9;
-                    margin: 0;
                 }
             }
         }
