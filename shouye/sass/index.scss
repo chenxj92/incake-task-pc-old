@@ -112,6 +112,7 @@ body .index{
     *width: 1200px;
     margin: 0 auto;
     height: 500px;
+    background: #f4f4f4;
     .swiper-wrapper{
         background: transparent;
     }
@@ -136,14 +137,11 @@ body .index{
         z-index: 2;
     }
     .swiper-slide{
+        background-position: center;
+        background-repeat: no-repeat;
         a{
             display: block;
-            text-align: center;
-        }
-        img{
-            vertical-align: top;
-            border: none;
-            min-height: 500px;
+            height: 100%;
         }
     }
     .pagination{
@@ -160,9 +158,10 @@ body .index{
         display: inline-block;
         width: 8px;
         height: 8px;
+        margin: 0 3px;
         border-radius: 10px;
         background: #595858;
-        margin: 0 3px;
+        font-size: 0\9;
         cursor: pointer;
     }
     .swiper-pagination-switch{
@@ -317,6 +316,7 @@ body .index{
     margin: 0 auto;
     overflow: hidden;
     .max_width{
+        *width: 1125px;
         margin-top: 30px;
         margin-right: -5px;
         overflow: hidden;
@@ -361,6 +361,7 @@ body .index{
 .ad_banner{
     width: 1150px;
     height: 100px;
+    margin-top: 20px;
     border: 1px solid #e7e7e7;
 }
 
