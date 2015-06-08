@@ -64,7 +64,7 @@ td * {
 body{
   font-size: 14px;
   font-family: "Microsoft YaHei";
-  width: 100%;
+//width: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   overflow-x: hidden;
@@ -74,7 +74,7 @@ body{
     background-image: url(../img/page_bg.gif) \9;
     background-position: top center;
     background-repeat: repeat-y;
-    min-width: 1280px;
+    min-width: 1200px;
     margin: 0 auto;
     @include v-gradient(#f4f4f4,#fff,#f4f4f4);
   }    
@@ -297,7 +297,7 @@ body{
 
 //页脚以及版权样式
 .footer{
-    overflow: hidden;
+    min-width: 1200px;
     padding-bottom: 15px;
     div{
       width: 1200px;
