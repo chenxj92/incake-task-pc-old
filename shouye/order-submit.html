@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>订单提交-INCAKE英式蛋糕专家—父亲节蛋糕、音乐蛋糕、礼品蛋糕</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<script charset="utf-8" src="./order-submit_files/v.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<!--<script type="text/javascript" src="./order-submit_files/list_v0.js"></script>-->
+		<script src="./order-submit_files/WdatePicker.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="css/order-submit.css" />
+		<script src="js/order-submit.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			 //校验图文验证码并发送短信验证码
+			$(function() {
+				$("#chkisok").click(function() {
+					$.ajax({
+						url: "../WebPage/SaveInfo.aspx",
+						dataType: "json",
+						type: "post",
+						timeout: "10000",
+						async: false,
+						data: {
+							"type": "_shatwcode",
+							"_twcode": $("#txt_twcode").val()
+						},
+						success: function(data) {
+							if (data.msg == "0") {
+								$(".ui_mask,.ui_popup").hide();
+								$(".ui_popup").find(".add_tool_list").remove();
+								$("#sends").attr("disabled", "disabled");
+								fasongcode(); //发送短信验证码
+							} else {
+								$("#msgcode").html("验证码错误");
+							}
+						},
+						error: function() {
+							CommenMsg("111网络错误！");
+						}
+					});
+				});
+			});
+			 //校验信息
+			function checkmsg() {
+					if ($("#phone").val() == "") {
+						CommenMsg("请输入手机号！");
+						return false;
+					}
+					if ($("#phone").val() != "" && isPhone(trim($("#phone").val())) == false) {
+						$("#phone").focus();
+						CommenMsg("请输入您的正确手机号码");
+						return false;
+					}
+					return true;
+				}
+				//发送验证码
+
+			function checkuser() {
+					$.ajax({
+						url: "../WebPage/SaveInfo.aspx",
+						dataType: "json",
+						type: "post",
+						timeout: "10000",
+						async: false,
+						data: {
+							"type": "_shacode",
+							"_phone": $("#phone").val()
+						},
+						success: function(data) {
+							if (data.msg == "0") {
+								$("#hid_user").val(data.msg);
+							} else if (data.msg == "2") {
+								$("#hid_user").val(data.msg);
+								CommenMsg("发送失败");
+							}
+						},
+						error: function() {
+							CommenMsg("222网络错误！");
+						}
+					});
+					if ($("#hid_user").val() == "2") {
+						return false;
+					}
+					return true;
+				}
+				//验证码倒计时效果
+
+			function fasongcode() {
+					var send = document.getElementById('sends'),
+						times = 60,
+						timer = null;
+					if (checkuser()) {
+						var html2 = times + '秒后重试';
+						$("#sends").attr("disabled", "disabled");
+						$("#sends").html(html2);
+						var timer = setInterval(function() {
+							times--;
+							if (times <= 0) {
+								send.innerHTML = '获取验证码';
+								clearInterval(timer);
+								times = 60;
+								send.disabled = false;
+							} else {
+								send.innerHTML = times + '秒后重试';
+							}
+						}, 1000)
+					}
+				}
+				//闪电购物 点击弹出图文验证码
+			$(function() {
+				$("#sends").click(function() {
+					if ($("#sends").attr("disabled") == "disabled") {
+						return;
+					}
+					if (checkmsg()) {
+						$("#txt_twcode").val("");
+						document.getElementById('getyanzheng').src = 'ValidateCode.aspx?id=' + Math.random();
+						//图文验证码
+						$(".ui_popup").hide();
+						$("#coupon_chkcode").popupFn();
+					}
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="page" style="padding-top: 128px;">
+			<div class="header header_fixed">
+				<div class="header_con ">
+					<div class="w fn_clear top_info">
+						<div class="fn_left">
+							欢迎来到印克时光&nbsp;&nbsp;&nbsp;&nbsp; 周一至周日8:30~21:00&nbsp;&nbsp;&nbsp;&nbsp; 客服热线：
+							<b>400-921-5757</b>
+						</div>
+						<div class="fn_right right_box">
+							<div class="fn_left">
+								<a href="http://www.incake.net/register.html">注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.incake.net/login.html">登录</a>&nbsp;&nbsp;
+								<a href="http://www.incake.net/buycart.html">购物车 </a>
+								<a href="http://www.incake.net/buycart.html" class="car">0</a>
+							</div>
+							<a href="http://www.incake.net/#" class="wx fn_left weibo">
+								<img src="./supercake_files/ico_wx.gif" alt="社交网络">
+								<img src="./supercake_files/weixin.gif" alt="" class="code">
+							</a>
+							<a href="http://www.incake.net/#" class="wx fn_left weixin">
+								<img src="./supercake_files/ico_wb.gif" alt="社交网络">
+								<img src="./supercake_files/weibo.gif" alt="" class="code">
+							</a>
+							<span class="city fn_left">上&nbsp;&nbsp;&nbsp;海</span>
+							<div class="city_list">
+								<a href="javascript:;" dataid="0591" datanow="021" class="city_link">福&nbsp;&nbsp;&nbsp;州</a>
+								<a href="javascript:;" dataid="021" datanow="021" class="city_link right_link">上&nbsp;&nbsp;&nbsp;海</a>
+							</div>
+						</div>
+					</div>
+					<div class="nav w fn_clear">
+						<div class="fn_left">
+							<div class="link list">
+								<a href="http://www.incake.net/products/cakelist.html">蛋糕馆<br><i>CAKE LIST</i></a>
+								<ul class="menu" style="display: none;">
+									<li>
+										<a href="http://www.incake.net/products/zhishi.html">芝士系列<br>Cheese</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/qiaokeli.html">巧克力系列<br>Chocolate</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/napolun.html">拿破仑系列<br>Napoleon</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/musi.html">慕斯系列<br>Mousse</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/ruzhi.html">乳脂系列<br>Cream</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/diy.html">选拼系列<br>DIY</a>
+									</li>
+								</ul>
+							</div>
+							<div class="link list">
+								<img src="img/NEW.png" / class="new_Angle">
+								<a href="http://www.incake.net/products/cakelist.html">主题蛋糕<br><i>CAKE</i></a>
+								<ul class="menu" style="display: none;">
+									<li>
+										<a href="http://www.incake.net/products/zhishi.html">芝士系列<br>Cheese</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/qiaokeli.html">巧克力系列<br>Chocolate</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/napolun.html">拿破仑系列<br>Napoleon</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/musi.html">慕斯系列<br>Mousse</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/ruzhi.html">乳脂系列<br>Cream</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/diy.html">选拼系列<br>DIY</a>
+									</li>
+								</ul>
+							</div>
+							<div class="link myincake">
+								<a href="http://www.incake.net/products/dessert.html">午后茶点<br><i>AFTERNOON TEA</i></a>
+							</div>
+						</div>
+						<div class="fn_right">
+							<div class="link act">
+								<a href="http://www.incake.net/manage/center.html">我的INCAKE<br><i>MY INCAKE</i></a>
+								<ul class="menu" style="display: none;">
+									<li>
+										<a href="http://www.incake.net/manage/myorder.html">我的订单<br>My orders</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/manage/jifen.html">我的积分<br>My points</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/manage/myquan.html">我的优惠券<br>Coupons</a>
+									</li>
+								</ul>
+							</div>
+							<div class="link enter">
+								企业专区
+								<br><i>ENTERPRISES</i>
+								<ul class="menu" style="display: none;">
+									<li>
+										<a href="http://www.incake.net/shichi.html">试吃申请<br>Apply for Foretaste</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/viplogin.html">企业VIP登陆<br>VIP LOG IN</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/KeHuLogin.html">老客户兑换专区<br>EXCHANGE ZONE</a>
+									</li>
+								</ul>
+							</div>
+							<div class="link about">
+								活动专享
+								<br><i>ACTIVITIES</i>
+								<ul class="menu" style="display: none;">
+									<li>
+										<a href="http://www.incake.net/newactivity/NewActivities.html?key=61">最新活动<br>NEW ACTIVITY</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/activity/DeliciousStrategy.html?key=65">美味攻略<br>DELICIOUS STRATEGY</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/jifen/">积分商城<br>POINTS MALL</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<a href="./supercake_files/supercake.htm" class="home_link"></a>
+					</div>
+				</div>
+			</div>
+			<div class="ui_popup w_text" id="coupon_city" style="width:350px; height:160px;">
+				<h4 class="fn_clear">
+					<span class="fn_left">提示</span>
+					<a href="javascript:;" class="fn_right ui_close_popup">
+					<img src="./order-submit_files/popup_close.gif" alt="关闭">
+					</a>
+				</h4>
+				<div class="ui_popup_content">
+					<p class="p tcenter" style="font-size: 18px;">切换城市您的购物车将被清空!</p>
+					<div class="fn_clear btn_box">
+						<a href="javascript:;" class="link_btn fn_left coupon_ok">确&nbsp;&nbsp;&nbsp;&nbsp;定</a>
+						<a href="javascript:;" class="link_btn fn_right ui_close_popup">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="order_module">
+				<h2>订单提交页</h2>
+				<div class="tcenter">
+					<img style="margin-top: 70px;" src="img/order-submit/order_load_d.gif" alt="订单流程">
+				</div>
+				<div class="order_page_box" id="dmsg">
+					<h5>
+                        <div class="line">
+                        	订货人信息&nbsp;&nbsp;&nbsp;&nbsp;
+                        	<a href="http://www.incake.net/about/DeliveryRange.html" target="_blank" class="cblue">
+                        		查看配送范围
+                        	</a>
+                        </div>
+                    </h5>
+					<div class="gray_table write">
+						<table id="form" class="form" cellspacing="0" cellpadding="0" border="0">
+							<tbody>
+								<tr>
+									<td height="30" align="right" valign="middle">
+										订货人：
+									</td>
+									<td>
+										<input type="text" id="name" maxlength="6" class="ui_input_login">&nbsp;&nbsp;<font color="red">*</font>
+										<div class="consignee-switch">
+											<label for="consignee-switch">也是收货人</label>
+											<input type="checkbox" id="consignee-switch" data-role="none" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td height="30" align="right" valign="middle">
+										订货人手机号：
+									</td>
+									<td>
+										<input type="text" id="phone" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,&#39;&#39;)" onafterpaste="this.value=this.value.replace(/\D/g,&#39;&#39;)" class="ui_input_login" style="float: left;">
+										<a href="javascript:" style="width: 90px; text-align: center; border: 1px solid #bfbfbf;
+                                                line-height: 30px; padding: 0 5px; border-left: none; display: inline-block;" class="cblue" id="sends">获取验证码</a>&nbsp;&nbsp;<font color="red">*</font>
+
+									</td>
+								</tr>
+								<tr>
+									<td height="30" align="right" valign="middle" onkeyup="this.value=this.value.replace(/\D/g,&#39;&#39;)" onafterpaste="this.value=this.value.replace(/\D/g,&#39;&#39;)">
+										短信验证码：
+									</td>
+									<td>
+										<input type="text" id="code" maxlength="4" value="" onkeyup="this.value=check(this.value)" class="ui_input_login">&nbsp;&nbsp;<font color="red">*</font>
+									</td>
+								</tr>
+								<tr id="name">
+									<td height="30" align="right" valign="middle">收货人：</td>
+									<td>
+										<input type="text" id="txt_name" maxlength="6" value="" class="ui_input_login">&nbsp;&nbsp;<font color="red">*</font>
+									</td>
+								</tr>
+								<tr id="phone">
+									<td height="30" align="right" valign="middle">收货人手机号：</td>
+									<td>
+										<input type="text" maxlength="11" id="txt_movephone" value="" class="ui_input_login">&nbsp;&nbsp;<font color="red">*</font>
+									</td>
+								</tr>
+								<tr>
+									<td height="30" align="right" valign="middle">地区：</td>
+									<td>
+										<select id="sel_c1" onchange="city_chanage1()">
+											<option value=""></option>
+											<option value="上海市">上海市</option>
+										</select>
+										<select id="sel_c2" onchange="city_chanage2()">
+											<option value=""></option>
+										</select>
+										<select id="sel_c3">
+											<option value="0"></option>
+										</select>&nbsp;&nbsp;<font color="red">*</font> </td>
+								</tr>
+								<tr>
+									<td height="30" align="right" valign="middle">街道地址：</td>
+									<td>
+										<input type="text" style="width:386px;" id="txt_address" value="" class="ui_input_login">&nbsp;&nbsp;<font color="red">*</font>
+									</td>
+								</tr>
+
+								<tr>
+									<td></td>
+									<td align="left">
+										<a href="javascript:;" class="link_btnDing">确&nbsp;&nbsp;定</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="order_page_box">
+					<h5>
+	                            <div class="line">收货时间</div>
+	                        </h5>
+					<div class="order_time">
+						<input name="Cgdhide" type="hidden" id="Cgdhide" value="2015-06-25">
+						<input name="MaxDate" type="hidden" id="MaxDate" value="2015-07-24">
+						<input type="text" id="txt_Day" onchange="changetime()" class="Wdate" style="height: 25px; width: 100px" onfocus="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;,isShowClear:false,readOnly:true,maxDate:&#39;#F{$dp.$D(\&#39;MaxDate\&#39;)}&#39;,minDate:&#39;#F{$dp.$D(\&#39;Cgdhide\&#39;)}&#39;})">
+						<select id="hourSelect" class="select_time" onchange="txt_1();">
+							<option value="093000">09时30分</option>
+							<option value="100000">10时</option>
+							<option value="103000">10时30分</option>
+							<option value="110000">11时</option>
+							<option value="113000">11时30分</option>
+							<option value="120000">12时</option>
+							<option value="123000">12时30分</option>
+							<option value="130000">13时</option>
+							<option value="133000">13时30分</option>
+							<option value="140000">14时</option>
+							<option value="143000">14时30分</option>
+							<option value="150000">15时</option>
+							<option value="153000">15时30分</option>
+							<option value="160000">16时</option>
+							<option value="163000">16时30分</option>
+							<option value="170000">17时</option>
+							<option value="173000">17时30分</option>
+							<option value="180000">18时</option>
+							<option value="183000">18时30分</option>
+							<option value="190000">19时</option>
+							<option value="193000">19时30分</option>
+							<option value="200000">20时</option>
+							<option value="203000">20时30分</option>
+						</select>
+						~
+						<select id="hourEndSelect" class="select_time" onchange="txt_2();">
+							<option value="103000">10时30分</option>
+							<option value="110000">11时</option>
+							<option value="113000">11时30分</option>
+							<option value="120000">12时</option>
+							<option value="123000">12时30分</option>
+							<option value="130000">13时</option>
+							<option value="133000">13时30分</option>
+							<option value="140000">14时</option>
+							<option value="143000">14时30分</option>
+							<option value="150000">15时</option>
+							<option value="153000">15时30分</option>
+							<option value="160000">16时</option>
+							<option value="163000">16时30分</option>
+							<option value="170000">17时</option>
+							<option value="173000">17时30分</option>
+							<option value="180000">18时</option>
+							<option value="183000">18时30分</option>
+							<option value="190000">19时</option>
+							<option value="193000">19时30分</option>
+							<option value="200000">20时</option>
+							<option value="203000">20时30分</option>
+							<option value="210000">21时</option>
+							<option value="213000">21时30分</option>
+						</select>
+						<!--<script language="javascript">
+									javascript: ordershouhuolist()
+								</script>-->
+
+					</div>
+				</div>
+				<div class="order_page_box">
+					<h5>
+	                            <div class="line">配送方式</div>
+	                        </h5>
+					<div class="table_data" id="yunhui">
+						<table class="table" border="0" cellspacing="0" cellpadding="0" style="width: 795px;">
+							<thead>
+								<tr>
+									<th>配送方式</th>
+									<th>备注</th>
+									<th>运费</th>
+									<th>运费优惠信息</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<label>
+											<input type="radio" class="radio" name="ConsigneeInfo" value="-1" checked="">
+										</label>
+									</td>
+									<td>INCAKE 冷链配送</td>
+									<td id="yunfen" data="0">0元</td>
+									<td>无</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="order_page_box" id="youhuixinxi">
+					<h5>
+	                            <div class="line">优惠信息</div>
+	                        </h5>
+					<div class="order_prime">
+						<div class="order_prime_li">
+							<label>
+								<input type="radio" class="radio" hide="IsCard" name="incakecard" onclick="CheckChooseQuan(0)" value="0" disabled="disabled"> 持有INCAKE蛋糕卡
+								<input type="radio" class="radio" hide="IsCard" name="incakecard" onclick="CheckChooseQuan(1)" value="1" disabled="disabled"> 持有INCAKE现金券
+								<input type="radio" class="radio" hide="IsVoucher" name="incakecard" onclick="CheckChooseQuan(2)" value="2" disabled="disabled"> 持有优惠/团购券
+							</label>
+							<div class="prime_con" id="k0" style="display: none">
+								<div class="p20 input_box">
+									请输入蛋糕卡ID 的后五位
+									<input type="text" id="txt_code" maxlength="5" class="ui_input_login" value="" style="width: 180px"> 蛋糕卡密码
+									<input type="text" id="txt_word" class="ui_input_login" value="" style="width: 180px">
+									<a href="javascript:;" onclick="CheckCard(0)" class="link_btncard">兑&nbsp;&nbsp;换</a>
+								</div>
+							</div>
+							<div class="prime_con" id="k1" style="display: none">
+								<div class="p20 input_box">
+									请输入现金券ID 的后五位
+									<input type="text" id="txt_xinjinID" maxlength="5" class="ui_input_login" value="" style="width: 180px"> 现金券密码
+									<input type="text" id="txt_xinjinCode" class="ui_input_login" value="" style="width: 180px">
+									<a href="javascript:;" onclick="CheckCard(1)" class="link_btncard">兑&nbsp;&nbsp;换</a>
+								</div>
+							</div>
+							<div class="prime_con" id="k2" style="display: none">
+								<div class="p20 input_box">
+									请输入您手中的优惠/团购券
+									<input type="text" id="txt_tuan" class="ui_input_login" value="" style="width: 180px">
+									<a href="javascript:;" onclick="CheckCard(2)" class="link_btncard">点击验证</a>
+								</div>
+							</div>
+							<div class="prime_con boxline" id="k_list" style="display: none">
+								<p class="c999">
+									您已明确知晓蛋糕卡的使用规则，抵扣完成如有未支付金额，请选一下支付方式，如不选则自动选定货到付款结算。
+								</p>
+								<p class="c999" style="color: Red;">温馨提示：针对持有129，149，239，359的蛋糕卡用户，可以在企业客户兑换专区使用可享受免差价，去<a href="http://www.incake.net/kehumanage/checkcard.html" class="cblue">[老客户兑换专区]。</a>
+								</p>
+								<div class="table_data">
+									<table class="table" border="0" cellspacing="0" cellpadding="0" style="width: 745px;">
+										<thead>
+											<tr>
+												<th>
+													密码
+												</th>
+												<th>
+													金额
+												</th>
+												<th>
+													操作
+												</th>
+											</tr>
+										</thead>
+										<tbody id="tbcard"></tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="order_page_box">
+					<h5>
+                        <div class="line">支付方式</div>
+                    </h5>
+					<div class="order_pay">
+						<div>
+							<label>
+								<input type="radio" class="radio" id="rhzfh" name="DefrayManner" onclick="changepos(&#39;&#39;)" value="hzfb" checked=""> 货到付款
+								<select id="sel_payType" onchange="CheckDefrayManner()" style="min-width:65px;">
+									<option value="1">现金</option>
+									<option value="2">POS</option>
+								</select>
+								<span class="c999" id="SpActive" style="display: none"></span>
+							</label>
+						</div>
+
+						<div>
+							<label>
+								在线支付
+							</label>
+							<div class="bank">
+								<img src="img/bank_bg_top.gif" style="display: block">
+								<div class="bank_content">
+									<h5>使用以下平台支付：</h5>
+									<ul class="fn_clear pay_li">
+										<li>
+											<label>
+												<input type="radio" value="UPB" class="radio" onclick="changepos(&#39;&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r11_c6.gif" alt="银联在线">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="ZFB" class="radio" onclick="changepos(&#39;&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r1_c1.gif" alt="支付宝支付">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="HAIHANG" class="radio" onclick="changepos(&#39;&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r1_c3.gif" alt="新生预付卡支付">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="EKT" class="radio" onclick="changepos(&#39;&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r11_c7.gif" alt="锦江E卡通">
+											</label>
+										</li>
+									</ul>
+									<h5 class="se_bank" id="ZhiFu">
+                                            <a href="javascript:;" class="cblue more_bank">选择网上银行支付 ▼</a>
+                                        </h5>
+									<ul class="fn_clear pay_li" id="more_bank" style="display: none;">
+										<li>
+											<label>
+												<input type="radio" value="CCB" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r3_c3.gif" alt="建设银行">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="CIB" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r3_c5.gif" alt="兴业银行">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="CMB" class="radio" onclick="changepos(&#39;&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r3_c7.gif" alt="招行银联">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="GDB" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r4_c1.gif" alt="广发银行">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="ICBC" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r7_c1.gif" alt="中国工商银行">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="ABC" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r7_c3.gif" alt="农业银行">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="BOCSH" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r7_c5.gif" alt="中国银行">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="CMBC" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r7_c8.gif" alt="民生银行">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="SPDB" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r9_c1.gif" alt="浦发银行">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="BOCOM" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r9_c3.gif" alt="交通银行">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="PSBC" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r9_c5.gif" alt="邮政储蓄">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="CNCB" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r9_c9.gif" alt="中信银行">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="CEB" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r11_c1.gif" alt="光大银行">
+											</label>
+										</li>
+										<li>
+											<label>
+												<input type="radio" value="HXB" class="radio" onclick="changepos(&#39;交行9折活动&#39;)" name="DefrayManner">
+												<img src="img/bank/Untitled-7_r11_c3.gif" alt="华夏银行">
+											</label>
+										</li>
+
+									</ul>
+								</div>
+								<img src="img/bank_bg_bottom.gif" style="display: block">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box_module">
+					<h3>商品信息</h3>
+					<div class="table_data">
+						<table class="table" border="0" cellspacing="0" cellpadding="0">
+							<thead>
+								<tr>
+									<th>
+										商品信息
+									</th>
+									<th>
+										规格
+									</th>
+									<th>
+										标配餐具
+									</th>
+									<th>
+										数 量
+									</th>
+									<th>
+										单 价
+									</th>
+									<th>
+										要 求
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr name="total">
+									<td>
+										<img src="./order-submit_files/r2015042410505979362.jpg" width="100" height="100" alt="SuperCake·夏">
+									</td>
+									<td>0.8磅</td>
+									<td></td>
+									<td class="order_car_num">
+										1</td>
+									<td class="price">￥69.00</td>
+									<td>
+										<label></label>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="order_page_box fp_box" id="tbfapiao">
+					<h5 class="ov">
+                            <div class="line fn_left">发票信息</div>
+                            <div class="fn_left radio_x">
+                                <label>
+                                    <input type="radio" class="radio hide" hide="IsFaPiao" name="fp_Invoice" value="0" checked="checked">不要
+                                </label>
+                                &nbsp;&nbsp;
+                                <label id="fp_Invoiceyes">
+                                    <input type="radio" class="radio show" hide="IsFaPiao" name="fp_Invoice" value="1">要
+                                </label>
+                            </div>
+                        </h5>
+					<div class="hide_box" style="display: none">
+						<div id="invoicelist"></div>
+						<div class="gray_table" id="new_fp">
+							<table id="Table1" class="form" cellspacing="0" cellpadding="0" border="0">
+								<tbody>
+									<tr>
+										<td height="30" align="right" valign="middle">
+											发票类型：
+										</td>
+										<td>
+											普通发票
+										</td>
+									</tr>
+									<tr>
+										<td height="30" align="right" valign="middle">
+											发票抬头：
+										</td>
+										<td>
+											<label>
+												<input type="radio" onclick="selectinvoice(0)" name="taitou" id="geren" value="0" checked="checked">&nbsp;个人&nbsp;&nbsp;&nbsp;</label>
+											<label>
+												<input type="radio" onclick="selectinvoice(1)" name="taitou" id="gongsi" value="1">&nbsp;公司</label>
+										</td>
+									</tr>
+									<tr id="tr_company" style="display: none">
+										<td height="30" align="right" valign="middle">
+											公司名称：
+										</td>
+										<td>
+											<input type="text" id="txt_danwei" class="ui_input_login">&nbsp;&nbsp;<font color="red">*</font>
+										</td>
+									</tr>
+									<tr>
+										<td height="30" align="right" valign="middle">
+											发票内容：
+										</td>
+										<td>
+											<select id="sel_Invoice">
+												<option value="蛋糕">蛋糕</option>
+												<option value="食品">食品</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										</td>
+										<td align="left">
+											<a href="http://www.incake.net/ShaFirOrder.html###" onclick="ShaSaveinvoice()" class="link_btn">保存发票信息</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="order_page_box" id="dbirth">
+					<h5>
+                            <div class="line fn_left">生日牌</div>
+                            <div class="fn_left radio_x">
+                                <label>
+                                    <input type="radio" class="radio hide" hide="Birth" name="fp_birthday" value="0" checked="checked" disabled="disabled">不要
+                                </label>
+                                &nbsp;&nbsp;
+                                <label>
+                                    <input type="radio" class="radio show" hide="Birth" name="fp_birthday" value="1" disabled="disabled">要
+                                </label>
+                            </div>
+                        </h5>
+					<div class="hide_box card" style="display: none">
+						<div class="gray_table">
+							<ul class="list">
+								<li class="li">
+									<label>
+										<input type="radio" class="radio show" id="mqj_card" onclick="chkBirthday()" name="annexarticle" value="中文" checked="checked"> 中文（生日快乐）
+									</label>
+								</li>
+								<li class="li">
+									<label>
+										<input type="radio" class="radio show" onclick="chkBirthday()" name="annexarticle" value="英文"> 英文（Happy Birthday）
+									</label>
+								</li>
+								<li class="li" id="mqj" style="display: none;">
+									<label>
+										<input type="radio" class="radio show" onclick="chkBirthday()" name="annexarticle" value="妈妈您辛苦了"> 妈妈您辛苦了
+									</label>
+								</li>
+								<li class="li">
+									<label>
+										<input type="radio" class="radio show" onclick="chkBirthday()" id="rbonlyou" name="annexarticle" value="">
+										<input type="text" id="birthcard" disabled="disabled" maxlength="14" class="ui_input_login"> 自定义（7个汉字或14个英文字母）
+									</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<script type="text/javascript">
+						function chkBirthday() {
+							if (document.getElementById("rbonlyou").checked == false) {
+								document.getElementById("birthcard").value = "";
+								document.getElementById("birthcard").disabled = true;
+							} else {
+								document.getElementById("birthcard").disabled = false;
+							}
+						}
+					</script>
+				</div>
+				<div class="order_page_box">
+					<h5>
+                            <div class="line fn_left">贺卡</div>
+                            <div class="fn_left radio_x">
+                                <label>
+                                    <input type="radio" class="radio hide" hide="IsHeCard" name="fp_heka" value="0" checked="checked">不要
+                                </label>
+                                &nbsp;&nbsp;
+                                <label>
+                                    <input type="radio" class="radio show" hide="IsHeCard" name="fp_heka" value="1">要
+                                </label>
+                            </div>
+                        </h5>
+					<div class="hide_box card" style="display: none">
+						<div class="gray_table">
+							<label>
+								<input type="radio" class="radio hide" name="hk_type" value="2" checked="checked"> 生日
+							</label>
+							&nbsp;&nbsp;
+							<label>
+								<input type="radio" class="radio show" name="hk_type" value="3"> 商务
+							</label>
+							<br>
+							<textarea name="" id="txt_content" maxlength="50" class="ui_textarea_text"></textarea>
+							<br> 最多可输入 <span class="red">50</span> 字
+						</div>
+					</div>
+				</div>
+				<div class="order_page_box">
+					<h5>
+                            <div class="line fn_left">订单备注</div>
+                            <div class="fn_left radio_x">
+                                <label>
+                                    <input type="radio" class="radio hide" name="fp_beizhu" value="0" checked="checked">不要
+                                </label>
+                                &nbsp;&nbsp;
+                                <label>
+                                    <input type="radio" class="radio show" name="fp_beizhu" value="1">要
+                                </label>
+                            </div>
+                        </h5>
+					<div class="hide_box card" style="display: none">
+						<div class="gray_table">
+							给IN CAKE留言
+							<br>
+							<textarea class="ui_textarea_text" id="txt_benzhu"></textarea>
+							<br> 最多可输入 <span class="red">200</span> 字
+						</div>
+					</div>
+				</div>
+				<div class="box_module box_money">
+					<input type="hidden" id="hid_SysNo" value="0">
+					<input type="hidden" id="hid_YouHui" value="0"> 商品总金额￥:
+					<span id="Sp_Total">69.00</span> 优惠券￥:<span id="Sp_YouHui">0</span> 促销￥:
+					<span id="Sp_huodong">0</span> 活动优惠￥:<span id="Sp_Active">0</span> 蛋糕卡￥:
+					<span id="card_0">0</span> 优惠/团购券￥<span id="card_1">0</span> 补差价￥:<span id="Sp_ChaPrice">0</span> 运费￥:
+					<span id="sp_yunfen">0</span>
+
+					<a href="javascript:;" onclick="ShaCheckOrder()" class="link_btn">提交订单</a>
+				</div>
+				<div class="box_module box_money" style="margin-top: -50px;">
+					<p>
+						应付金额 :&nbsp;&nbsp;<b>￥<span id="Sp_Pay">69</span></b>
+					</p>
+				</div>
+			</div>
+			<div class="footer">
+				<div>
+					<img src="./supercake_files/footer.gif">
+					<a class="foot">沪ICP备12045835号<br>Copyright©2002 INCAKE Company All Rights Reserved</a>
+				</div>
+			</div>
+			<div class="foot_div" hidden="hidden">
+				<script type="text/javascript">
+					var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+					document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F350d834e9b212adee92daa5ed888a2e7' type='text/javascript'%3E%3C/script%3E"));
+				</script>
+			</div>
+
+			<div class="ui_mask"></div>
+			<div class="ui_popup w_text" id="coupon_ture" style="width: 340px;">
+				<h4 class="fn_clear">
+			        <span class="fn_left">提示</span> <a href="javascript:;" class="fn_right ui_close_popup">
+			            <img src="./order-submit_files/popup_close.gif" alt="关闭">
+			        </a>
+			    </h4>
+				<div class="ui_popup_content">
+					<p class="p tcenter">
+						您的订单正在提交....</p>
+					<div class="tcenter btn_box">
+					</div>
+				</div>
+			</div>
+			<div class="ui_popup w_text" id="conlost" style="width: 340px;">
+				<h4 class="fn_clear">
+			        <span class="fn_left">提示</span> <a href="javascript:;" class="fn_right ui_close_popup">
+			            <img src="./order-submit_files/popup_close.gif" alt="关闭">
+			        </a>
+			    </h4>
+				<div class="ui_popup_content">
+					<p class="p tcenter">
+						您的订单生成失败，请您重新提交订单</p>
+					<div class="tcenter btn_box">
+						<a href="./order-submit_files/order-submit.htm" class="link_btn coupon_ture">继续</a>
+					</div>
+				</div>
+			</div>
+			<div class="ui_popup w_text ui_popupend" id="coupon_turemsg" style="width: 340px;">
+				<h4 class="fn_clear">
+			        <span class="fn_left">提示</span> <a href="javascript:;" class="fn_right ui_close_popup quanmsg">
+			            <img src="./order-submit_files/popup_close.gif" alt="关闭">
+			        </a>
+			    </h4>
+				<div class="ui_popup_content">
+					<p class="p tcenter" id="commenmsg">
+					</p>
+					<div class="tcenter btn_box">
+						<a href="javascript:;" class="link_btn ui_close_popup quanmsg">确&nbsp;&nbsp;&nbsp;&nbsp;定</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="ui_popup w_text chkcode" id="coupon_chkcode" style="width: 340px;">
+				<h4 class="fn_clear">
+			        <span class="fn_left">提示</span> <a href="javascript:;" class="fn_right ui_close_popup quanmsg">
+			            <img src="./order-submit_files/popup_close.gif" alt="关闭">
+			        </a>
+			    </h4>
+				<div class="ui_popup_content">
+					<p class="p tcenter">
+						验证码：
+						<input type="text" id="txt_twcode" class="ui_input_vip" style="width: 150px">
+						<img alt="验证码" id="getyanzheng" src="./order-submit_files/ValidateCode.aspx" title="点击" style="margin-bottom: -10px;margin-left: -20px; margin-top: 10px; width: 80px; cursor: pointer;">&nbsp;&nbsp;&nbsp;
+						<a class="huantu" onclick="javascript:document.getElementById(&#39;getyanzheng&#39;).src=&#39;ValidateCode.aspx?id=&#39;+Math.random();return false;">看不清?换一张</a>
+					</p>
+					<p class="p tcenter" id="msgcode" style="padding-bottom: 0px; line-height: 0px; color: Red;">
+					</p>
+					<div class="tcenter btn_box">
+						<a href="javascript:;" id="chkisok" class="link_btn  chkok">确&nbsp;&nbsp;&nbsp;&nbsp;定</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>

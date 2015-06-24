@@ -1,0 +1,258 @@
+.ui_input_login{
+    border:1px solid #bfbfbf;
+    height:30px;
+    width:150px;
+    line-height:30px;
+    color:#666;
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+}
+.link_btnDing{
+    height:36px;
+    line-height:36px;color:#fff;
+    background-color:#333A70;
+    padding:0 30px;
+    display:inline-block;
+}
+.tcenter {
+  text-align: center;
+}
+.table_data {
+  padding-top: 20px;
+  .table {
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid #e0e4e7;
+    th, td {
+      padding: 10px 0;
+    }
+    th {
+      background-color: #eee;
+      color: #002a50;
+      font-weight: normal;
+    }
+    td {
+      line-height: 24px;
+      border-bottom: 1px solid #f6f6f6;
+      padding: 15px;
+    }
+  }
+}
+.form {
+  padding: 20px 0;
+  .link_btn {
+    margin-top: 10px;
+  }
+  td {
+    padding: 4px 0;
+  }
+}
+.gray_table {
+  padding: 10px 40px;
+  background-color: #f6f6f6;
+}
+.order_page_box {
+  padding: 30px 30px 0 30px;
+  .radio_x {
+    padding-left: 20px;
+    position: relative;
+    top: -5px;
+  }
+  .table_data {
+    padding-top: 0;
+  }
+  h5 {
+    border-bottom: 1px dotted #a1a1a1;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 32px;
+    height: 32px;
+    margin-bottom: 20px;
+    .line {
+      border-left: 3px solid #1c246c;
+      padding-left: 10px;
+      height: 20px;
+      line-height: 20px;
+      min-width: 60px;
+    }
+  }
+  .list .li {
+    padding: 8px 10px;
+    &:hover {
+      background-color: #fffeeb;
+      .cblue {
+        display: inline;
+      }
+    }
+    label {
+      display: inline-block;
+      width: 600px;
+    }
+    .cblue {
+      display: none;
+    }
+  }
+  .bank {
+    width: 831px;
+    margin-top: 15px;
+    .bank_content {
+      border-left: 1px solid #ebebeb;
+      border-right: 1px solid #ebebeb;
+      padding: 20px 30px;
+    }
+    h5 {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .pay_li {
+      padding-top: 20px;
+    }
+    ul {
+      width: 680px;
+      li {
+        float: left;
+        margin: 0 10px 10px 0;
+        width: 160px;
+        .radio {
+          position: relative;
+          top: -20px;
+          left: -5px;
+        }
+      }
+    }
+  }
+  .card {
+    .gray_table {
+      padding: 30px;
+    }
+    .ui_textarea_text {
+      margin-top: 20px;
+      width: 300px;
+      height: 120px;
+    }
+  }
+}
+.order_module {
+  border: 1px solid #dcdcdc;
+  background-color: #fff;
+  min-height: 500px;
+  width: 1200px;
+  margin: 0 auto;
+  .order_point {
+    line-height: 30px;
+    font-size: 15px;
+    width: 550px;
+    margin: 0 auto;
+    padding-top: 100px;
+    p {
+      padding-bottom: 10px;
+    }
+  }
+  h2 {
+    color: #1c246c;
+    font-weight: normal;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #eee;
+    border-bottom: 1px solid #dcdcdc;
+    padding-left: 20px;
+  }
+  .box_module {
+    padding: 30px;
+    h3 {
+      color: #002e73;
+      font-weight: normal;
+      font-size: 18px;
+    }
+    .peijian {
+      width: 840px;
+      text-align: center;
+    }
+    .price {
+      padding: 20px 0;
+      .c999 {
+        padding-top: 30px;
+      }
+    }
+    .buy_info {
+      width: 280px;
+      overflow: hidden;
+      padding-top: 20px;
+    }
+    .price .box {
+      width: 140px;
+    }
+    .go_buy .go {
+      width: 135px;
+    }
+    .num_box {
+      width: 320px;
+      padding-bottom: 10px;
+      .num_a {
+        border: 2px solid #E2E2E2;
+        float: left;
+        width: 40px;
+        height: 40px;
+        margin: 0 15px 10px 0;
+        font-size: 20px;
+        text-align: center;
+        line-height: 40px;
+      }
+      .on {
+        background-color: #48A5E6;
+        color: #fff;
+        border-color: #48A5E6;
+      }
+    }
+  }
+  .order_money {
+    font-size: 18px;
+    color: #666;
+    padding-top: 20px;
+    text-align: right;
+  }
+  .parts {
+    padding-top: 50px;
+  }
+  .box_money {
+    text-align: right;
+    color: #122b47;
+    line-height: 30px;
+    .box {
+      padding-top: 30px;
+      border-top: 1px solid #dcdcdc;
+    }
+  b {
+    font-size: 24px;
+    font-weight: normal;
+    color: red;
+  }    
+    .gray {
+      background-color: #999;
+    }
+    .link_btn {
+      font-size: 16px;
+      min-width: 60px;
+      text-align: center;
+      margin-left: 10px;
+    }
+  }
+}
+//收货人和订货人是否为同一人
+.consignee-switch{
+    display: inline-block;
+    margin-left: 20px;
+}
+//WdatePicker
+.Wdate{
+    border:#999 1px solid;
+    height:20px;
+    background:#fff url(../img/datePicker.gif) no-repeat right;
+}
+
+.WdateFmtErr{
+    font-weight:bold;
+    color:red;
+}
