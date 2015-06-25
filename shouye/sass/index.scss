@@ -15,9 +15,6 @@ body .index{
   }
 }
 
-.ui_mask {
-    @include opacity(0.8);
-}
 
 .ui_popup {
   z-index: 999;
