@@ -13,7 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="css/order-submit.css" />
 		<script src="js/order-submit.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			 //校验图文验证码并发送短信验证码
+			//校验图文验证码并发送短信验证码
 			$(function() {
 				$("#chkisok").click(function() {
 					$.ajax({
@@ -368,12 +368,12 @@
 				</div>
 				<div class="order_page_box">
 					<h5>
-	                            <div class="line">收货时间</div>
-	                        </h5>
+                        <div class="line">收货时间</div>
+                    </h5>
 					<div class="order_time">
 						<input name="Cgdhide" type="hidden" id="Cgdhide" value="2015-06-25">
 						<input name="MaxDate" type="hidden" id="MaxDate" value="2015-07-24">
-						<input type="text" id="txt_Day" onchange="changetime()" class="Wdate" style="height: 25px; width: 100px" onfocus="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;,isShowClear:false,readOnly:true,maxDate:&#39;#F{$dp.$D(\&#39;MaxDate\&#39;)}&#39;,minDate:&#39;#F{$dp.$D(\&#39;Cgdhide\&#39;)}&#39;})">
+						<input type="text" id="txt_Day" onchange="changetime()" class="Wdate" onfocus="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;,isShowClear:false,readOnly:true,maxDate:&#39;#F{$dp.$D(\&#39;MaxDate\&#39;)}&#39;,minDate:&#39;#F{$dp.$D(\&#39;Cgdhide\&#39;)}&#39;})">
 						<select id="hourSelect" class="select_time" onchange="txt_1();">
 							<option value="093000">09时30分</option>
 							<option value="100000">10时</option>
@@ -462,8 +462,8 @@
 				</div>
 				<div class="order_page_box" id="youhuixinxi">
 					<h5>
-	                            <div class="line">优惠信息</div>
-	                        </h5>
+                        <div class="line">优惠信息</div>
+                    </h5>
 					<div class="order_prime">
 						<div class="order_prime_li">
 							<label>
