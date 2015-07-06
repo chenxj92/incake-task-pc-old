@@ -8,7 +8,7 @@
 .WdateDiv{
 	width:400px;
 	background-color:#FFFFFF;
-	border:#84C5E9 1px solid;
+	border:#898DB0 1px solid;
 	padding:2px;
 }
 /* 双月日历的宽度 */
@@ -133,7 +133,7 @@
  ***************************/
 /* 星期栏 TR */
 .WdateDiv .MTitle{
-	background-color:#228CA7;
+	background-color:#2D3576;
 	color: #fff;
 }
 /* 日期栏表格 TABLE */
@@ -147,7 +147,7 @@
 /* 日期格的mouseover样式 TD */
 .WdateDiv .WdayOn{
 	cursor:pointer;
-	background-color:#C0EBEF;
+	background-color:#515DBC;
 }
 /* 周末日期格的样式 TD */
 .WdateDiv .Wwday{
@@ -158,14 +158,14 @@
 .WdateDiv .WwdayOn{
 	cursor:pointer;
 	color:#000;
-	background-color:#C0EBEF;
+	background-color:#515DBC;
 }
 .WdateDiv .Wtoday{
 	cursor:pointer;
 	color:#228CA7;
 }
 .WdateDiv .Wselday{
-	background-color:#A9E4E9 ;
+	background-color:#4B549F ;
 }
 .WdateDiv .WspecialDay{
 	background-color:#66F4DF;
@@ -173,12 +173,12 @@
 /* 其他月份的日期 */
 .WdateDiv .WotherDay{ 
 	cursor:pointer;
-	color:#228CA7;	
+	color:#4B549F;	
 }
 /* 其他月份的日期mouseover样式 */
 .WdateDiv .WotherDayOn{ 
 	cursor:pointer;
-	background-color:#C0EBEF;	
+	background-color:#515DBC;	
 }
 /* 无效日期的样式,即在日期范围以外日期格的样式,不能选择的日期 */
 .WdateDiv .WinvalidDay{
