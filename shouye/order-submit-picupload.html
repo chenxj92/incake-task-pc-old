@@ -9,10 +9,13 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
 		<script src="./order-submit_files/WdatePicker.js" type="text/javascript"></script>
+		<script src="js/cute/CutPic.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cute/ui.core.packed.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cute/ui.draggable.packed.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="css/order-submit.css" />
 		<script src="js/order-submit.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			//校验图文验证码并发送短信验证码
+			 //校验图文验证码并发送短信验证码
 			$(function() {
 				$("#chkisok").click(function() {
 					$.ajax({
@@ -708,10 +711,50 @@
 										<label></label>
 									</td>
 								</tr>
+								<tr class="upload-content">
+									<td colspan="6">
+										<!--<div class="custom-btn">
+											定制蛋糕：你还没<a class="btn upload-btn" href="javascript:;">上传</a>照片!
+										</div>-->
+										<div class="custom-btn">
+											定制蛋糕：<span class="pic-box"><img src="img/user-pic/yulan.jpg"/></span><a class="btn preview" href="javascript:;">预览</a>|<a class="btn editor" href="javascript:;">编辑</a>
+										</div>
+									</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
+
+				<div id="Step2Container">
+					<span class="close">X</span>
+					<div id="Canvas">
+						<div id="ImageDragContainer"></div>
+						<div id="IconContainer"></div>
+					</div>
+					<div class="uploaddiv">
+						<table>
+							<tr>
+								<td id="Min">
+									<span id="moresmall" class="smallbig">+</span>
+								</td>
+								<td>
+									<div id="bar">
+										<div class="child"></div>
+									</div>
+								</td>
+								<td id="Max">
+									<span id="morebig" class="smallbig">-</span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="btn-group">
+						<a class="rechoose" href="javascript:;">重新选择</a>
+						<button class="isok">确定</button>
+					</div>
+				</div>
+
 				<div class="order_page_box fp_box" id="tbfapiao">
 					<h5 class="ov">
                             <div class="line fn_left">发票信息</div>
