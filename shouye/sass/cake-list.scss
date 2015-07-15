@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import "bianliang";
+//蛋糕筛选样式
+.screening-content{
+    margin: 0 30px;
+    border-bottom: 1px solid #dcdcdc;
+    dt{
+        float: left;
+        width: 80px;
+        line-height: 20px;
+        text-align: center;
+        color: #505050;
+        background: #f0f0f0;
+    }
+    dd{
+        margin-bottom: 12px;
+        overflow: hidden;
+        a{
+            display: inline-block;
+            padding: 0 10px;
+            margin: 0 15px 5px 2px;
+            &.active{
+                color: #fff;
+                background: #1ba1e8;
+            }
+        }
+    }
+}
