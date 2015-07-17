@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import "bianliang";
 .ui_input_login{
     border:1px solid #bfbfbf;
     height:30px;
@@ -346,12 +347,16 @@
     height: 300px;
     border: 1px solid #B2B2B2;
     border-radius: 5px;
+    overflow: hidden;
     cursor: pointer;
 }
 #IconContainer{
     position: relative;
     left: 0;
-    top: -250px;
+    top: -300px;
+    img{
+        @include opacity(.6);
+    }
 }
 
 .uploaddiv{
