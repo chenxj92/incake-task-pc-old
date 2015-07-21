@@ -1,0 +1,180 @@
+.order_module {
+  border: 1px solid #dcdcdc;
+  background-color: #fff;
+  min-height: 500px;
+  width: 1200px;
+  margin: 0 auto;
+  .order_point {
+    line-height: 30px;
+    font-size: 15px;
+    width: 550px;
+    margin: 0 auto;
+    padding-top: 100px;
+    p {
+      padding-bottom: 10px;
+    }
+  }
+  h2 {
+    color: #1c246c;
+    font-weight: normal;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #eeeeee;
+    border-bottom: 1px solid #dcdcdc;
+    padding-left: 20px;
+  }
+  .box_module {
+    padding: 30px;
+    h3 {
+      color: #002e73;
+      font-weight: normal;
+      font-size: 18px;
+    }
+    .peijian {
+      width: 840px;
+      text-align: center;
+    }
+    .price {
+      padding: 20px 0;
+      .c999 {
+        padding-top: 30px;
+      }
+    }
+    .buy_info {
+      width: 280px;
+      overflow: hidden;
+      padding-top: 20px;
+    }
+    .price .box {
+      width: 140px;
+    }
+    .go_buy .go {
+      width: 135px;
+    }
+    .num_box {
+      width: 320px;
+      padding-bottom: 10px;
+      .num_a {
+        border: 2px solid #E2E2E2;
+        float: left;
+        width: 40px;
+        height: 40px;
+        margin: 0 15px 10px 0;
+        font-size: 20px;
+        text-align: center;
+        line-height: 40px;
+      }
+      .on {
+        background-color: #48A5E6;
+        color: #fff;
+        border-color: #48A5E6;
+      }
+    }
+  }
+  .order_money {
+    font-size: 18px;
+    color: #666;
+    padding-top: 20px;
+    text-align: right;
+  }
+  .parts {
+    padding-top: 50px;
+  }
+  .box_money {
+    text-align: right;
+    color: #122b47;
+    line-height: 30px;
+    .box {
+      padding-top: 30px;
+      border-top: 1px solid #dcdcdc;
+    }
+    b {
+      font-size: 24px;
+      font-weight: normal;
+    }
+    .gray {
+      background-color: #999;
+    }
+    .link_btn {
+      font-size: 16px;
+      min-width: 60px;
+      text-align: center;
+      margin-left: 10px;
+    }
+  }
+}
+.table_data {
+  padding-top: 20px;
+  .table {
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid #e0e4e7;
+    th, td {
+      padding: 10px 0;
+    }
+    .tleft {
+      text-align: left;
+    }
+    th {
+      background-color: #eee;
+      color: #002a50;
+      font-weight: normal;
+    }
+    td {
+      line-height: 24px;
+      border-bottom: 1px solid #f6f6f6;
+      padding: 15px;
+    }
+  }
+}
+.order_car_num .ui_input_text {
+  width: 40px;
+  text-align: center;
+}
+.ui_input_text {
+  border: 1px solid #bfbfbf;
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+  color: #666;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+}
+
+.ui_web_tab {
+  border: 1px solid #D5D5D5;
+  height: 29px;
+  line-height: 29px;
+  background: url(../img/index_tab_bg.gif) repeat-x;
+  width: 839px;
+  margin: 20px auto;
+  overflow: hidden;
+  _zoom: 1;
+  ul {
+    width: 1200px;
+  }
+  li {
+    width: 279px;
+    text-align: center;
+    color: #595757;
+    float: left;
+    border-right: 1px solid #B6B5B5;
+    cursor: pointer;
+    &.on {
+      color: #0160AF;
+      background: url(../img/index_tab_bg_on.gif) repeat-x;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

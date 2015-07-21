@@ -1,0 +1,37 @@
+.goods_h3{
+    h3{
+        height: 0px;
+        margin: 60px auto;
+        width: 1200px;
+        text-align: center;
+        border-top: 1px solid #a0a0a0;
+        span{
+            display: inline-block;
+            background: #fff;
+            padding: 0 20px;
+            color: #0160AF;
+            font-weight: normal;
+            font-size: 20px;
+            position: relative;
+            top: -13px;
+        }
+    }
+}
+.goods_h3_list {
+  width: 1195px;
+  margin: 0 auto;
+  padding: 0 0 20px 0;
+  overflow: hidden;
+  .width{
+      width: 1400px;
+  }
+  .iteam{
+      background: url(../img/goods_h3_list.gif) no-repeat center right;
+      float: left;
+      width: 300px;
+      text-align: center;
+      p{
+          line-height: 40px;
+      }
+  }
+}
