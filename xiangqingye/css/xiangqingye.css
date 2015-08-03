@@ -1,0 +1,7 @@
+.price .taocan-btn .btn { position: relative; width: auto; border: 1px solid #D5D5D5; color: red; background-image: none; }
+.price .taocan-btn .btn b { font-size: 1.4em; }
+.price .taocan-btn .btn s { position: absolute; bottom: 0; right: 0; display: block; width: 20px; height: 20px; background: url(../img/price_on.png); }
+
+.taocan-banner { width: 850px; height: 230px; }
+
+/*# sourceMappingURL=xiangqingye.css.map */

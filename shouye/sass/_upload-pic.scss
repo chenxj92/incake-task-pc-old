@@ -1,0 +1,18 @@
+.table_data .table td{
+    position: relative;
+}
+.upload-btn{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    a{
+        display: table-cell;
+        width: 1%;
+        color: #fff;
+        background: #dcbf87;
+        &+a{
+            border-left: 1px solid #fff;
+        }
+    }
+}
