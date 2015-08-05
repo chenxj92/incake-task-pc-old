@@ -4,4 +4,10 @@
 
 .taocan-banner { width: 850px; height: 230px; }
 
+.pic-upload { position: absolute; left: 45px; bottom: 0; }
+.pic-upload img { float: left; }
+.pic-upload .right-box { overflow: hidden; padding: 10px 0 0 10px; }
+.pic-upload h5 { line-height: 30px; }
+.pic-upload button { width: 138px; height: 30px; border: none; color: #fff; background: #dcbf87; }
+
 /*# sourceMappingURL=xiangqingye.css.map */

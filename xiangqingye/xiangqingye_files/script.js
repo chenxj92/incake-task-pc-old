@@ -708,8 +708,8 @@ $(function () {
                 else { info1 += "{id:\"" + $pid + "\",n:" + $dataid + ",p:" + parseFloat($price * $dataid) + "}," }
             }
             if (info1 != '') { info = info1 + ',' + info1; }
-            // __msv_m("settle", "[" + info + "]");
-            //  settle(info);
+               __msv_m("settle", "[" + info + "]");
+                settle(info);
             if ($("#hid").val() == "0") { location.href = "/FirOrder.html"; }
             else if($("#hid").val() == "2"){location.href = "/kehumanage/kehufirorder.html";}
             else { location.href = "/manage/FirOrder.html"; }

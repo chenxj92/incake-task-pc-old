@@ -25,3 +25,36 @@
     width: 850px;
     height: 230px;
 }
+.pic-upload{
+    position: absolute;
+    left: 45px;
+    bottom: 0;
+    img{
+        float: left;
+    }
+    .right-box{
+        overflow: hidden;
+        padding: 10px 0 0 10px;
+    }
+    h5{
+        line-height: 30px;
+    }
+    button{
+        width: 138px;
+        height: 30px;
+        border: none;
+        color: #fff;
+        background: #dcbf87;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
