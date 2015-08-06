@@ -45,9 +45,13 @@
         border: none;
         color: #fff;
         background: #dcbf87;
+        cursor: pointer;
+        outline: none;
+        &:active{
+            background: darken(#dcbf87,20%);
+        }
     }
 }
-
 
 
 

@@ -174,3 +174,25 @@
         background: #666;
     }
 }
+//预览弹出框
+.huaying-innerbox{
+    width: 298px;
+    height: 298px;
+    margin-top: 90px;
+}
+.pagination-huaying{
+    text-align: center;
+    margin-top: 100px;
+    .swiper-pagination-switch{
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        display: inline-block;
+        border-radius: 50%;
+        background: #c8c8c8;
+        cursor: pointer;
+    }
+    .swiper-active-switch{
+        background: #e52d6b;
+    }
+}

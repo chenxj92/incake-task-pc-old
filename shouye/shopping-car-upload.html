@@ -8,6 +8,9 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
 		<script type="text/javascript" src="js/list_v0.js"></script>
+		<script src="js/shopping-car.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css"/>
+		<script src="js/idangerous.swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<!--新增样式-->
 		<link rel="stylesheet" type="text/css" href="css/shopping-car.css" />
 	</head>
@@ -177,7 +180,7 @@
 										<td>
 											<img src="./tuijian_files/155-1.png" width="100" height="100" alt="草莓拿破仑">
 											<div class="upload-btn">
-												<a href="javascript:;">预览</a>
+												<a href="javascript:;" class="preview">预览</a>
 												<a href="javascript:;">上传定制图片</a>
 											</div>
 										</td>
@@ -481,7 +484,7 @@
 			</script>
 		</div>
 
-		<div class="ui_mask" style="display: noe;"></div>
+		<div class="ui_mask" style="display: none;"></div>
 		<div class="ui_popup w_text ui_popupend" id="coupon_tureend" style="width: 340px;">
 			<h4 class="fn_clear">
 				<span class="fn_left">提示</span>
@@ -581,6 +584,32 @@
 				<button class="ligbtn">确定</button>
 			</div>
 		</div>
+		
+		
+		<!--画影蛋糕展示start-->
+		<div class="ui_popup w_text ui_popuimg" id="imagesup" style="width: 500px; height: 520px;padding: 0px; background:#fff url(img/huayingditu.jpg) no-repeat top center;">
+			<h4 class="fn_clear" style="position: absolute; right: 10px; top: 10px;">
+		        <a href="javascript:;" class="fn_right ui_close_popup ">
+		            <img src="img/popup_close.gif" alt="关闭">
+		        </a>
+		    </h4>
+			<div class="swiper-container huaying-innerbox">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="img/huaying-show.jpg" />
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="img/huaying-show.jpg" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="pagination pagination-huaying"></div>
+		</div>
+		<!--画影蛋糕展示end-->
 	</body>
 
 </html>

@@ -1,4 +1,4 @@
-$(function(){
+$(function() {
 	//广告位轮播
 	$('.taocan-banner').each(function() {
 		var count = $(this).find(".swiper-slide").length;
@@ -20,4 +20,5 @@ $(function(){
 			});
 		}
 	});
+
 })
