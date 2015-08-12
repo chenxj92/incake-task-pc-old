@@ -1,3 +1,5 @@
+@charset "utf-8";
+//套餐样式
 .price{
     .taocan-btn{
         .btn{
@@ -52,7 +54,36 @@
         }
     }
 }
-
+//详情页新样式
+.b1{
+    padding-right: 15px;
+}
+.b3{
+    img{
+        display: block;
+    }
+    .brand{
+        margin-bottom: 13px;
+    }
+    @at-root .section{
+        overflow: hidden;
+        .fn_left{
+            margin-right: 36px;
+        }
+        h2,p{
+            font-size: 12px;
+            color: #6b6b6b;
+        }
+        h2{
+            padding-top: 24px;
+            font-weight: normal;
+        }
+    }
+    .img-box{
+        width: 780px;
+        margin: 20px auto 0;
+    }
+}
 
 
 

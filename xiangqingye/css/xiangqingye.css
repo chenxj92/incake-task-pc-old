@@ -11,4 +11,14 @@
 .pic-upload button { width: 138px; height: 30px; border: none; color: #fff; background: #dcbf87; cursor: pointer; outline: none; }
 .pic-upload button:active { background: #c49539; }
 
+.b1 { padding-right: 15px; }
+
+.b3 img { display: block; }
+.b3 .brand { margin-bottom: 13px; }
+.section { overflow: hidden; }
+.section .fn_left { margin-right: 36px; }
+.section h2, .section p { font-size: 12px; color: #6b6b6b; }
+.section h2 { padding-top: 24px; font-weight: normal; }
+.b3 .img-box { width: 780px; margin: 20px auto 0; }
+
 /*# sourceMappingURL=xiangqingye.css.map */

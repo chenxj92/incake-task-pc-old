@@ -179,10 +179,6 @@ $(function () {
     if ($("#senlin").val() == "1") {
         $("#youhuixinxi").hide();
     }
-    //    if ($("#hid_JDid").val() == "1") {
-    //        $("input[name='incakecard']").attr("disabled", true);
-    //        $("#dbirth").hide();
-    //    }
 
     if ($("#hid_zhifu").val() == "1") {
         $("#ZhiFu").hide();
@@ -706,9 +702,6 @@ function laodaddrealist() {
         }
     });
 }
-//$(document).ready(function () {
-//    laodaddrealist();
-//})
 $(function () {
     $(".link_btnok").click(function () {
         if (checkUserInfo5()) {
@@ -1711,13 +1704,6 @@ var CheckCard = function (codetype) {
     }
 }
 var ordercardlist = function (codetype) {
-    //    var id = $("#hid_productid").val();
-    //    var str = id.split('-');
-    //    for (var i = 0; i < str.length; i++) {
-    //        if (str[i] == "372" || str[i] == "373") {
-    //            alert("此蛋糕不能用蛋糕卡");
-    //        }
-    //    }
     $.ajax({
         url: "../WebPage/InvoicePage.aspx", dataType: "json", type: "post", timeout: "10000",
         data: { "type": "_cardlist", "cardtype": codetype, "sn": $("#hidSN").val(), "pricenum": $("#hid_PriceNum").val(), "pricenum1": $("#hid_PriceNum1").val() },
@@ -1761,8 +1747,6 @@ var deletecard = function (temp) {
     });
 }
 var CheckChooseQuan = function (ID) {
-
-
     $(".syouhui").attr("checked", false);
     $("#Sp_YouHui").html("0"); //我的优惠券清空
     $("#hid_SysNo").val("0"); //我的优惠券清空
@@ -1783,11 +1767,6 @@ var CheckDefrayManner = function () {
 
         var peisongdate = $("#txt_Day").val();
         if (peisongdate >= "2015-05-08" && peisongdate <= "2015-05-10" && $("#hid_muqinjie").val() == "1") {
-            //            if ($("#hid_mqjtime").val() == "1") {
-            //                loadtime("2");
-            //            }
-            //$("#mqj").show();
-            //$("#youhuixinxi").hide();
             $("#rhzfh").attr("checked", true); //货到付款选择
             $("#SpActive").slideUp(300);
         }
@@ -2107,12 +2086,10 @@ var CheckOrder = function () {
             else if (data.msg == "2") {
                 $(".ui_popupone").hide();
                 $("#coupon_tureone").popupFn();
-                // alert("该蛋糕每个用户只能购买一个，请下次再来抢购");
             }
             else {
                 $(".ui_popupover").hide();
                 $("#coupon_tureover").popupFn();
-                // alert("该蛋糕已抢购完，请下次再来抢购");
             }
 
         },
