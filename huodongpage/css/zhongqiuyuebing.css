@@ -1,0 +1,36 @@
+@charset "UTF-8";
+body { margin: 0; padding: 0; font-family: "微软雅黑"; }
+
+.Autumn-content .autumn-header h3, .Autumn-content .autumn-header h1, .Autumn-content .autumn-header h2, .Autumn-content .autumn-container1 .txt h1, .Autumn-content .autumn-container2 .txt h1 { line-height: 1; }
+
+.Autumn-content { width: 1000px; padding-bottom: 40px; }
+.Autumn-content .autumn-header { height: 477px; padding-right: 315px; overflow: hidden; background: url(../img/zhongqiuyuebing/Autumn01.jpg) no-repeat center; background-size: contain; }
+.Autumn-content .autumn-header h3 { margin-top: 215px; font-size: 24px; font-weight: normal; text-align: right; color: #0e2f8f; }
+.Autumn-content .autumn-header h1 { margin: 20px 0; text-align: right; font-size: 40px; color: #505050; }
+.Autumn-content .autumn-header h2 { margin: 0 0 0 317px; font-size: 24px; font-weight: normal; color: #505050; }
+.Autumn-content .autumn-container1 .left, .Autumn-content .autumn-container2 .left { float: left; }
+.Autumn-content .autumn-container1 .btn, .Autumn-content .autumn-container2 .btn { display: inline-block; width: 240px; height: 40px; padding: 0 20px; text-align: right; line-height: 40px; border-radius: 40px; text-decoration: none; color: #fff; background: #e4d6b0; }
+.Autumn-content .autumn-container1 .btn span, .Autumn-content .autumn-container2 .btn span { float: left; color: #c80000; vertical-align: middle; font-size: 2em; }
+.Autumn-content .autumn-container1 .list, .Autumn-content .autumn-container2 .list { margin: 0; padding: 0; overflow: hidden; list-style: none; }
+.Autumn-content .autumn-container1 .list li, .Autumn-content .autumn-container2 .list li { font-size: 12px; line-height: 28px; color: #a6a6a6; }
+.Autumn-content .autumn-container1 .txt, .Autumn-content .autumn-container2 .txt { width: 440px; }
+.Autumn-content .autumn-container1 .txt h1, .Autumn-content .autumn-container2 .txt h1 { margin: 0; font-family: sans-serif; font-size: 24px; font-weight: normal; color: #000; }
+.Autumn-content .autumn-container1 .txt h1 span, .Autumn-content .autumn-container2 .txt h1 span { display: inline-block; margin-left: 20px; text-indent: 16px; font-size: .5em; line-height: 24px; vertical-align: middle; font-family: "微软雅黑"; color: #000; background: #dcdcdc; }
+.Autumn-content .autumn-container1 .txt h2, .Autumn-content .autumn-container2 .txt h2 { font-size: 14px; color: #505050; }
+.Autumn-content .autumn-container1 .txt p, .Autumn-content .autumn-container2 .txt p { font-size: 12px; color: #505050; }
+.Autumn-content .autumn-container1 { height: 537px; margin-top: -90px; background: url(../img/zhongqiuyuebing/Autumn02.png) no-repeat; background-size: contain; }
+.Autumn-content .autumn-container1 .left { width: 50%; margin-right: 20px; }
+.Autumn-content .autumn-container1 .left img { margin-left: 170px; }
+.Autumn-content .autumn-container1 .left .btn { float: right; }
+.Autumn-content .autumn-container1 .right { padding-top: 60px; overflow: hidden; }
+.Autumn-content .autumn-container1 .right img { float: left; margin-top: 20px; }
+.Autumn-content .autumn-container1 .right .txt { padding-top: 48px; clear: both; }
+.Autumn-content .autumn-container1 .right .txt span { width: 300px; }
+.Autumn-content .autumn-container2 { padding-left: 64px; padding-bottom: 20px; margin-top: -50px; background: url(../img/zhongqiuyuebing/Autumn06.png) no-repeat bottom right; overflow: hidden; }
+.Autumn-content .autumn-container2 .left { width: 50%; }
+.Autumn-content .autumn-container2 .left img { float: right; margin-top: 20px; }
+.Autumn-content .autumn-container2 .left .txt span { width: 250px; }
+.Autumn-content .autumn-container2 .left .list { margin-top: 40px; }
+.Autumn-content .autumn-container2 .right img { margin-top: 40px; }
+
+/*# sourceMappingURL=zhongqiuyuebing.css.map */
