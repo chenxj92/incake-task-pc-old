@@ -1,0 +1,135 @@
+@charset "utf-8";
+@import "activitys";
+@import "common";
+
+body{
+    @extend %mp;
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: #878787;
+}
+
+ul{
+    list-style: none;
+    @extend %mp;
+}
+
+.content {
+    width: 1000px; 
+    background-color:#fff;
+    background: url(../img/fuzhouyuebing/fbg.jpg) no-repeat bottom right;
+    .header{
+        height: 350px;
+        position: relative;
+        .header-r{
+            position: absolute;
+            left: 305px;
+            top: 175px;
+        }
+    }
+    .cont1{
+        margin-left: 80px;
+        overflow: hidden;
+        .cont1-l{
+            margin-right: 15px;
+        }
+        p{
+            overflow: hidden;
+            font-size: 30px;
+            margin-top: 20px;
+        }
+    }
+    .cont2{
+        height: 350px;
+        div{
+            position: relative;
+            float: left;
+            margin:30px 0 0 35px;
+        }
+        .cont2-l{
+            .btn{
+                margin-top: 20px;
+            }
+        }
+        .cont2-r{
+            top: -20px;
+            left: 50px;
+        }
+        .cont2-3{
+            top: -235px;
+        }
+        a{
+            display: block;
+            width: 210px;
+            line-height: 40px;
+            background-color: #e4d6b0;
+            border-radius: 100px;
+            padding: 0 20px;
+            text-align: right;
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+            margin: 10px auto 0;
+            span{
+                color: #b60d0d;
+                float: left;
+                font-size: 2em;
+            }
+            
+        }
+    }
+    .footer{
+        margin-top: 80px;
+        position: relative;
+        clear: both;
+        padding-bottom: 40px;
+        dl{
+            margin: 0;
+            margin-left: 45px;
+            padding: 15px;
+            color: #505050;
+            dt{
+                display: inline-block;
+                padding: 5px 8px;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #fff;
+                background: #156CB3;
+                font-size: 16px;
+            }
+            dd{
+                margin: 0;
+                padding-left: 10px;
+                line-height:1.5em;
+                text-align: justify;
+                font-size: 16px;
+                &:before{
+                    position: absolute;
+                    display: block;
+                    margin-left: -10px;
+                    margin-top: 10px;
+                    content: '';
+                    width: 3px;
+                    height: 3px;
+                    background: #156CB3;
+                }
+            }
+        }
+        .footer-r{
+            position: absolute;
+            right: 20px;
+            bottom: 0;
+        }
+        .footer-txt{
+            position: absolute;
+            bottom:30px;
+            right:160px;
+            white-space: nowrap;
+            font-size: 14px;
+            color: #156CB3;
+            
+        }
+    }
+}
+
+

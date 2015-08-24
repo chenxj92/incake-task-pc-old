@@ -1,0 +1,20 @@
+//for循环
+@for $i from 14 through 30 {
+  .f#{$i} { 
+      font-size: #{$i}px;
+  }
+}
+
+.mt20{margin-top: 20px;}
+.mt35{margin-top: 35px;}
+.mt45{margin-top: 45px;}
+.mt50{margin-top: 50px;}
+.mt120{margin-top: 120px;}
+.mt-130{margin-top: -130px;}
+.ml45{margin-left: 45px;}
+.ml55{margin-left: 55px;}
+.ml90{margin-left: 90px;}
+.ml100{margin-left: 100px;}
+.flt{float: left;}
+.frt{float: right;}
+.clear{clear: both;}
